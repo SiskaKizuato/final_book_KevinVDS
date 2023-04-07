@@ -20,20 +20,25 @@ export default function Navbar() {
                 </div>
             </div>
             <div className='navMidContainer'>
-
+                <div className='paddSearch'>
+                    <div className='containerSearchBar'>
+                        <div className='containerSearch'><BsSearch className='btnSearchNav'/></div>
+                        <input type="text" className='searchInput' placeholder='Search your book here'/>
+                    </div>
+                </div>
             </div>
             <div className='navRightContainer'>
                 <div className='containerThemeMode'>
-
+                    <div className='barreMode'><div className='bouleMode'></div></div>
                 </div>
                 <div className='containerPhoneNav'>
-                    <MdOutlinePhoneInTalk className='logoTelNav'/>
+                    <MdOutlinePhoneInTalk className='logoTelNav' />
                     <p><a className='pop numNav' href="tel:0123456789">+01234567890</a></p>
                 </div>
                 <div className='containerPanierLogo'>
                     <div className='containerQuantiteNav'><p className='quantiteNav pop'>0</p></div>
                     <div className='efface'></div>
-                    <div className='containerLogoPanierNav'><CgShoppingBag className='bag'/></div>
+                    <div className='containerLogoPanierNav'><CgShoppingBag className='bag' /></div>
                 </div>
             </div>
         </div>

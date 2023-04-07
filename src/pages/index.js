@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Head from 'next/head'
 import Link from 'next/link'
+import Join from '@/components/Join/Join'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,6 +27,7 @@ export default function Home() {
       <div className='testBarre h-[2000px]'>
 
       </div>
+      <Join />
     </>
   )
 }

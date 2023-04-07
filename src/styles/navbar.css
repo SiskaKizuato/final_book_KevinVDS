@@ -1,8 +1,7 @@
-.containerNav{
+.containerNav {
     padding: 0% 4.4% 0% 6%;
     width: 100%;
     height: 90px;
-    border: 1px solid red;
     background-color: var(--blanc-froid);
     display: flex;
     align-items: center;
@@ -11,31 +10,32 @@
 
 /* XXXXXXXXXXXXXXXXXXXX */
 
-.navLeftContainer{
+.navLeftContainer {
     height: 100%;
     width: fit-content;
     display: flex;
 }
 
-.burgerContainer{
+.burgerContainer {
     height: 100%;
     width: 42px;
 }
 
-.burger{
+.burger {
     width: 100%;
     height: 50px;
     cursor: pointer;
 }
 
-.burger1{
+.burger1 {
     height: 3.8px;
     background-color: var(--noir);
     width: 13px;
     border-radius: 50px;
     transition: 0.2s ease-out;
 }
-.burger2{
+
+.burger2 {
     height: 3px;
     background-color: var(--noir);
     width: 26px;
@@ -43,22 +43,23 @@
     transition: 0.2s ease-out;
     margin: 4px 0px;
 }
-.burger3{
+
+.burger3 {
     height: 3.8px;
     background-color: var(--noir);
     width: 18px;
     border-radius: 50px;
 }
 
-.burger:hover .burger1{
+.burger:hover .burger1 {
     width: 26px;
 }
 
-.burger:hover .burger2{
+.burger:hover .burger2 {
     width: 13px;
 }
 
-.titreSiteNav{
+.titreSiteNav {
     font-weight: bold;
     color: var(--noir);
     font-size: 28px;
@@ -66,16 +67,81 @@
 
 /* XXXXXXXXXXXXXXXXXXXX */
 
-.navMidContainer{
-    border: 1px solid black;
+.navMidContainer {
     height: 100%;
     width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paddSearch {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    cursor: text;
+}
+
+/* .paddSearch:hover .containerSearchBar{
+    border: 2px solid #5960662d;
+} */
+
+.containerSearchBar:not(:focus-within):hover {
+    border: 2px solid #5960662d;
+}
+
+
+.containerSearchBar {
+    border: 2px solid transparent;
+    background-color: var(--blanc-casse);
+    height: 50px;
+    width: 500px;
+    border-radius: 5px;
+    transition: 0.2s ease-out;
+    display: flex;
+    align-items: center;
+}
+
+.containerSearch {
+    height: 100%;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnSearchNav{
+    color: var(--noir);
+    font-size: 18px;
+    opacity: 90%;
+}
+
+.searchInput {
+    background-color: var(--blanc-casse);
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 3px;
+    outline: none;
+    overflow: hidden;
+    font-size: 18px;
+}
+
+
+.containerSearchBar:focus-within {
+    border: 2px solid var(--noir);
+}
+
+input::selection {
+    background-color: var(--vert);
+    color: var(--blanc-froid);
 }
 
 /* XXXXXXXXXXXXXXXXXXXX */
 
-.navRightContainer{
-    border: 1px solid black;
+.navRightContainer {
     height: 100%;
     width: fit-content;
     display: flex;
@@ -83,7 +149,33 @@
     align-items: center;
 }
 
-.containerPhoneNav{
+.containerThemeMode {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.barreMode {
+    width: 100%;
+    height: 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    background-color: var(--vert);
+    padding: 2px;
+}
+
+.bouleMode {
+    border-radius: 50px;
+    height: 16px;
+    width: 16px;
+    background-color: var(--blanc-froid);
+}
+
+.containerPhoneNav {
     height: 100%;
     width: fit-content;
     display: flex;
@@ -91,30 +183,32 @@
     gap: 7px;
 }
 
-.logoTelNav{
+.logoTelNav {
     color: var(--noir);
     width: 20px;
     height: auto;
 }
 
-.numNav{
+.numNav {
     font-size: 14px;
     color: var(--noir);
     font-weight: 400;
     transition: 0.2s ease-out;
 }
 
-.numNav:hover{
+.numNav:hover {
     color: var(--vert);
+    cursor: pointer;
 }
 
-.containerPanierLogo{
+.containerPanierLogo {
     height: 30px;
     width: 30px;
     position: relative;
+    cursor: pointer;
 }
 
-.containerQuantiteNav{
+.containerQuantiteNav {
     background-color: var(--noir);
     position: absolute;
     top: -2px;
@@ -130,12 +224,12 @@
     text-align: center;
 }
 
-.quantiteNav{
+.quantiteNav {
     color: var(--blanc-froid);
     font-size: 12px;
 }
 
-.efface{
+.efface {
     position: absolute;
     top: -2px;
     right: 1px;
@@ -147,7 +241,7 @@
     background-color: white;
 }
 
-.containerLogoPanierNav{
+.containerLogoPanierNav {
     position: absolute;
     bottom: 3px;
     left: 0;
@@ -159,7 +253,8 @@
     justify-content: center;
     align-items: center;
 }
-.bag{
+
+.bag {
     color: var(--noir);
     font-size: 50px;
     width: 60px;
