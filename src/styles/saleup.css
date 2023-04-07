@@ -1,0 +1,93 @@
+.containerSaleUp{
+    background-color: var(--blanc-froid);
+    width: 100%;
+    height: fit-content;
+    padding: 6% 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.divSale{
+    border-radius: 5px;
+    width: 545px;
+    height: 185px;
+    -webkit-box-shadow: 0px 0px 64px 6px rgba(0, 0, 0, 0.07);
+    -moz-box-shadow: 0px 0px 64px 6px rgba(0, 0, 0, 0.07);
+    box-shadow: 0px 0px 64px 6px rgba(0, 0, 0, 0.07);
+    display: flex;
+    transition: transform 0.3s ease-out;
+    position: relative;
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXX */
+.casseCouille{
+    height: 100%;
+    width: 48%;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    overflow: hidden;
+}
+
+.divSaleL{
+    height: 100%;
+    width: 100%;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img1{
+    background-image: url("../img/book1.jpg");
+    transition: transform 0.3s ease-out;
+}
+
+.img2{
+    background-image: url("../img/book2.jpg");
+    transition: transform 0.3s ease-out;
+}
+
+.divSale:hover .img1,
+.divSale:hover .img2{
+    transform: scale(1.15);
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXXX */
+
+.divSaleR{
+    height: 100%;
+    width: 52%;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    padding:0px 30px;
+}
+
+.saleUp{
+    color: var(--vert);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.hardCover{
+    color: var(--noir);
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 23px;
+}
+
+.starting{
+    color: var(--gris);
+    font-size: 16px;
+}
+
+.prixSaleUp{
+    color: var(--vert);
+    font-weight: 500;
+}

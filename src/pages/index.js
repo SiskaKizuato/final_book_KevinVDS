@@ -4,6 +4,7 @@ import styles from '@/styles/Home.module.css'
 import Head from 'next/head'
 import Link from 'next/link'
 import Join from '@/components/Join/Join'
+import SaleUp from '@/components/SaleUp/SaleUp'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,9 +25,7 @@ export default function Home() {
         <title>FinalBook</title>
         <link rel="icon" href="/fav2.png" />
       </Head>
-      <div className='testBarre h-[2000px]'>
-
-      </div>
+      <SaleUp />
       <Join />
     </>
   )
