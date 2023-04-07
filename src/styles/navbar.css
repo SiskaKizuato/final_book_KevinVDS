@@ -1,0 +1,167 @@
+.containerNav{
+    padding: 0% 4.4% 0% 6%;
+    width: 100%;
+    height: 90px;
+    border: 1px solid red;
+    background-color: var(--blanc-froid);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* XXXXXXXXXXXXXXXXXXXX */
+
+.navLeftContainer{
+    height: 100%;
+    width: fit-content;
+    display: flex;
+}
+
+.burgerContainer{
+    height: 100%;
+    width: 42px;
+}
+
+.burger{
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+}
+
+.burger1{
+    height: 3.8px;
+    background-color: var(--noir);
+    width: 13px;
+    border-radius: 50px;
+    transition: 0.2s ease-out;
+}
+.burger2{
+    height: 3px;
+    background-color: var(--noir);
+    width: 26px;
+    border-radius: 50px;
+    transition: 0.2s ease-out;
+    margin: 4px 0px;
+}
+.burger3{
+    height: 3.8px;
+    background-color: var(--noir);
+    width: 18px;
+    border-radius: 50px;
+}
+
+.burger:hover .burger1{
+    width: 26px;
+}
+
+.burger:hover .burger2{
+    width: 13px;
+}
+
+.titreSiteNav{
+    font-weight: bold;
+    color: var(--noir);
+    font-size: 28px;
+}
+
+/* XXXXXXXXXXXXXXXXXXXX */
+
+.navMidContainer{
+    border: 1px solid black;
+    height: 100%;
+    width: fit-content;
+}
+
+/* XXXXXXXXXXXXXXXXXXXX */
+
+.navRightContainer{
+    border: 1px solid black;
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.containerPhoneNav{
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.logoTelNav{
+    color: var(--noir);
+    width: 20px;
+    height: auto;
+}
+
+.numNav{
+    font-size: 14px;
+    color: var(--noir);
+    font-weight: 400;
+    transition: 0.2s ease-out;
+}
+
+.numNav:hover{
+    color: var(--vert);
+}
+
+.containerPanierLogo{
+    height: 30px;
+    width: 30px;
+    position: relative;
+}
+
+.containerQuantiteNav{
+    background-color: var(--noir);
+    position: absolute;
+    top: -2px;
+    right: 1px;
+    height: 18px;
+    width: 18px;
+    z-index: 2;
+    border: 50px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.quantiteNav{
+    color: var(--blanc-froid);
+    font-size: 12px;
+}
+
+.efface{
+    position: absolute;
+    top: -2px;
+    right: 1px;
+    height: 18px;
+    width: 18px;
+    z-index: 1;
+    border: 50px;
+    border-radius: 50px;
+    background-color: white;
+}
+
+.containerLogoPanierNav{
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    z-index: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bag{
+    color: var(--noir);
+    font-size: 50px;
+    width: 60px;
+    height: 60px;
+}
