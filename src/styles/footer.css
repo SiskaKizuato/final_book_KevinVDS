@@ -1,0 +1,110 @@
+.containerFooter{
+    width: 100%;
+    height: 240px;
+    background-color: var(--footer);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0% 6%;
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXX */
+
+.divSupF{
+    width: 100%;
+    height: 30%;
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+
+.divMidF{
+    width: 100%;
+    height: 40%;
+    display: flex;
+}
+
+.subDivMidF{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    color: var(--blanc-froid);
+}
+
+.containerLogoF{
+    height: 100%;
+    width: 58px;
+}
+
+.logoF{
+    color: var(--vert);
+    font-size: 55px;
+    padding: 0px 10px 0px 0px;
+    margin: 0;
+}
+
+.txtFooterMid{
+    padding-top: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: aliceblue;
+}
+
+.titreF{
+    font-size: 20px;
+    font-weight: 700;
+}
+.texteF{
+    font-size: 17.5px;
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+
+.divInfF{
+    border-top: 1px solid rgba(255, 255, 255, 0.317);
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--blanc-froid);
+}
+
+.containerHeartF{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2px;
+    width: 27px;
+    height: 100%;
+}
+
+.linkToBookShelfF{
+    font-size: 20px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.linkToBookShelfF:hover{
+    color: var(--vert);
+}
+
+.transitionVFooter{
+    transition: 0.3s;
+}
+.transitionVFooter:hover{
+    color: var(--vert);
+}
+
+.copyrightF{
+    font-size: 17.5px;
+}
+
+.yo{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
