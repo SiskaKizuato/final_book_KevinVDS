@@ -25,6 +25,11 @@
   font-family: 'Poppins', sans-serif;
 }
 
+
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

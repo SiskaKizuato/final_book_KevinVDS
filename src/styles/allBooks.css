@@ -1,0 +1,183 @@
+.containerAllBooks{
+    border-top: 4px solid rgba(128, 128, 128, 0.068);
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6% 6%;
+}
+
+/* XXXXXXXXXXXXXXXXXXXX */
+
+.cadreAllBooks{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+}
+
+/* XXXXXXXXXXXXXXXXXXXX */
+
+.containerCategory{
+    height: 100%;
+    width: 260px;
+}
+
+.searchCategory{
+    width: 100%;
+    height: 50px;
+    border-radius: 7px;
+    margin-bottom: 15px;
+}
+
+.inputSearchCat{
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background-color: var(--blanc-casse);
+    padding: 0px 10px;
+    outline: none;
+    font-size: 18px;
+}
+
+.inputSearchCat:not(:focus-within):hover {
+    border: 2px solid #5960662d;
+}
+
+.inputSearchCat:focus-within {
+    border: 2px solid var(--noir);
+}
+
+input::selection {
+    background-color: var(--vert);
+    color: var(--blanc-froid);
+}
+
+.titreCat{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.categories{
+    margin: 10px 0px;
+    cursor: pointer;
+}
+
+.categories:hover,
+.categories.selected {
+  color: var(--vert);
+}
+
+.fourchettePrix{
+    color: var(--gris);
+    margin: 12px 0px;
+}
+
+.containerBarreFourchette{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.barreBouleFourch{
+    width: 100%;
+    height: 17px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.barreFourch{
+    width: 100%;
+    height: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.301);
+    border-radius: 50px;
+    background-color: rgba(128, 128, 128, 0.1);
+    position: absolute;
+}
+
+.bouleFourch{
+    height: 17px;
+    width: 17px;
+    border-radius: 40px;
+    background-color: var(--vert);
+    position: absolute;
+}
+
+/* XXXXXXXXXXXXXXXXXXXX */
+
+.containerBooksByCat{
+    width: 832px;
+    height: fit-content;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 22.3px;
+}
+
+.cards{
+    width: 262px;
+    height: 460px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px 4px rgba(0,0,0,0.14);
+-webkit-box-shadow: 0px 0px 25px 4px rgba(0,0,0,0.14);
+-moz-box-shadow: 0px 0px 25px 4px rgba(0,0,0,0.14);
+}
+
+.containerCadreImgCards{
+    width: 100%;
+    height: 300px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.bgDual{
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    display: flex;
+    left: -70px;
+    top: -60px;
+    rotate: -25deg;
+}
+
+.beige{
+    height: 100%;
+    width: 50%;
+    background-color: #f6ebe7;
+}
+
+.gris{
+    height: 100%;
+    width: 50%;
+    background-color: #b5b4bc;
+}
+
+.cadreImgCards{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    border-radius: inherit;
+    rotate: -25deg;
+    filter: saturate(110%) contrast(120%);
+}
+
+.ombreLivre{
+    position: absolute;
+    width: 160px;
+    height: 230px;
+    top: 45px;
+    left: 50px;
+    rotate: -25deg;
+    background-color: #b5b4bc;
+}

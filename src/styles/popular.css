@@ -1,0 +1,104 @@
+.containerPopular{
+    width: 100%;
+    height: fit-content;
+    padding: 6% 6%;
+    background-color: var(--blanc-casse);
+}
+
+/* XXXXXXXXXXXXXXXXXX */
+
+.popularUp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.booksGallery{
+    color: var(--vert);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.popuplarBooks{
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--noir);
+    transition: 1.1s ease-out;
+}
+
+.containerPopular:hover .popuplarBooks{
+    letter-spacing: 3px;
+}
+
+.ligneBizarre{
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.carreA{
+    height: 18px;
+    width: 18px;
+    background-color: var(--vert);
+    opacity: 20%;
+    position: absolute;
+    left: -5px;
+    transform: rotate(45deg);
+    transition: 1s ease-in-out;
+}
+
+.carreB{
+    height: 18px;
+    width: 18px;
+    background-color: var(--vert);
+    opacity: 20%;
+    position: absolute;
+    left: -15px;
+    transform: rotate(45deg);
+    transition: 1s ease-in-out;
+}
+
+.containerPopular:hover .carreA{
+    transform: rotate(-1500deg) scale(2) skew(0.06turn, -18deg);
+    left: -100px;
+    height: 24px;
+}
+
+.containerPopular:hover .carreA{
+    transform: rotate(1500deg) scale(2) skew(-0.06turn, 18deg);
+    left: 82px;
+    height: 24px;
+    border-bottom: 1px solid var(--vert-clair);
+    border-right: 2px solid var(--vert);
+    opacity: 50%;
+}
+
+.containerPopular:hover .carreB{
+    transform: rotate(1500deg) scale(2) skew(-0.06turn, 18deg);
+    left: 82px;
+    height: 24px;
+    border-bottom: 1px solid var(--vert-clair);
+    border-right: 2px solid var(--vert-clair);
+    opacity: 85%;
+}
+
+.ligneVerte{
+    position: absolute;
+    height: 1.3px;
+    width: 200px;
+    opacity: 50%;
+    background-color: var(--vert);
+    z-index: 0;
+    transition: 1s ease-in-out;
+}
+
+.containerPopular:hover .ligneVerte{
+    width: 170px;
+}
+
+/* XXXXXXXXXXXXXXXXXX */

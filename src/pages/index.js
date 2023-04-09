@@ -5,6 +5,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Join from '@/components/Join/Join'
 import SaleUp from '@/components/SaleUp/SaleUp'
+import Popular from '@/components/Popular/Popular'
+import Navbar from '@/components/Navbar/Navbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,7 +27,9 @@ export default function Home() {
         <title>FinalBook</title>
         <link rel="icon" href="/fav2.png" />
       </Head>
+      <Navbar />
       <SaleUp />
+      <Popular />
       <Join />
     </>
   )

@@ -5,7 +5,7 @@ import { CgShoppingBag } from "react-icons/cg";
 import Link from 'next/link';
 
 
-export default function Navbar() {
+export default function Navbar2() {
     return (
         <div className='containerNav'>
             <div className='navLeftContainer'>
@@ -20,18 +20,10 @@ export default function Navbar() {
                     <Link href={"/"} className='philo titreSiteNav'>BOOKSHELF.</Link>
                 </div>
             </div>
-            <div className='navMidContainer'>
-                <div className='paddSearch'>
-                    <div className='containerSearchBar'>
-                        <div className='containerSearch'><BsSearch className='btnSearchNav'/></div>
-                        <input type="search" className='searchInput' placeholder='Search your book here'/>
-                    </div>
-                </div>
-            </div>
             <div className='navRightContainer'>
-                <Link href={"/allBooks"} className='containerThemeMode'>
+                <div className='containerThemeMode'>
                     <div className='barreMode'><div className='bouleMode'></div></div>
-                </Link>
+                </div>
                 <div className='containerPhoneNav'>
                     <MdOutlinePhoneInTalk className='logoTelNav' />
                     <p><a className='pop numNav' href="tel:0123456789">+01234567890</a></p>

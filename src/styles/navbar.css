@@ -85,9 +85,6 @@
     cursor: text;
 }
 
-/* .paddSearch:hover .containerSearchBar{
-    border: 2px solid #5960662d;
-} */
 
 .containerSearchBar:not(:focus-within):hover {
     border: 2px solid #5960662d;
