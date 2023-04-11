@@ -1,4 +1,4 @@
-.containerAllBooks{
+.containerAllBooks {
     border-top: 4px solid rgba(128, 128, 128, 0.068);
     width: 100%;
     height: fit-content;
@@ -10,7 +10,7 @@
 
 /* XXXXXXXXXXXXXXXXXXXX */
 
-.cadreAllBooks{
+.cadreAllBooks {
     width: 100%;
     height: 100%;
     display: flex;
@@ -20,19 +20,19 @@
 
 /* XXXXXXXXXXXXXXXXXXXX */
 
-.containerCategory{
+.containerCategory {
     height: 100%;
     width: 260px;
 }
 
-.searchCategory{
+.searchCategory {
     width: 100%;
     height: 50px;
     border-radius: 7px;
     margin-bottom: 15px;
 }
 
-.inputSearchCat{
+.inputSearchCat {
     width: 100%;
     height: 100%;
     border-radius: inherit;
@@ -44,10 +44,12 @@
 
 .inputSearchCat:not(:focus-within):hover {
     border: 2px solid #5960662d;
+    padding: 0px 8px;
 }
 
 .inputSearchCat:focus-within {
     border: 2px solid var(--noir);
+    padding: 0px 8px;
 }
 
 input::selection {
@@ -55,27 +57,118 @@ input::selection {
     color: var(--blanc-froid);
 }
 
-.titreCat{
+.titreCat {
     font-size: 20px;
     font-weight: bold;
 }
 
-.categories{
-    margin: 10px 0px;
+.categories {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 23px;
+    margin: 12px 0px;
+    border-top: 1px solid var(--blanc-froid);
+    border-bottom: 1px solid var(--blanc-froid);
     cursor: pointer;
+    transition: 0.3s ease-out;
 }
 
 .categories:hover,
 .categories.selected {
-  color: var(--vert);
+    color: var(--vert);
+    border-top: 1px solid var(--blanc-froid);
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.212);
+    /* border-bottom: 0.7px solid rgba(0, 0, 0, 0.15); */
 }
 
-.fourchettePrix{
+.authorList{
+    width: 100%;
+    height: 50px;
+    border-radius: 7px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background-color: var(--blanc-casse);
+}
+
+.selectionAuteur{
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 0px 5px 0px 15px;
+    left: 0;
+    cursor: pointer;
+    border: 1px solid blue;
+    transition: 0.3s ease-out;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+}
+
+.selectionAuteur:not(:focus-within):hover {
+    border: 2px solid #5960662d;
+}
+
+.selectionAuteur:focus-within {
+    border: 2px solid var(--noir);
+}
+
+.containerListeAuteursA{
+    background-color: var(--blanc-froid);
+    width: 260px;
+    height: fit-content;
+    position: absolute;
+    box-shadow: 0px 0px 25px 2px rgba(0, 0, 0, 0.14);
+    -webkit-box-shadow: 0px 0px 25px 2px rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: 0px 0px 25px 2px rgba(0, 0, 0, 0.14);
+    display: flex;
+    z-index: 1;
+    top: 49px;
+    align-items: center;
+    justify-content: left;
+    text-align: left;
+    overflow: hidden;
+    border-radius: 5px;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.324);
+    border-left: 1px dotted rgba(0, 0, 0, 0.324);
+    border-right: 1px dotted rgba(0, 0, 0, 0.324);
+}
+.hidden {
+    display: none;
+}
+
+.containerListeAuteursB{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auteursSkin{
+    width: 100%;
+    height: 27px;
+    padding: 2px 10px 0px 10px;
+}
+
+.auteursSkin:hover{
+    color: var(--blanc-froid);
+    background-color: var(--vert);
+    cursor: pointer;
+}
+
+.fourchettePrix {
     color: var(--gris);
     margin: 12px 0px;
 }
 
-.containerBarreFourchette{
+.containerBarreFourchette {
     width: 100%;
     height: 30px;
     display: flex;
@@ -83,7 +176,7 @@ input::selection {
     justify-content: center;
 }
 
-.barreBouleFourch{
+.barreBouleFourch {
     width: 100%;
     height: 17px;
     display: flex;
@@ -91,7 +184,7 @@ input::selection {
     position: relative;
 }
 
-.barreFourch{
+.barreFourch {
     width: 100%;
     height: 8px;
     border: 1px solid rgba(0, 0, 0, 0.301);
@@ -100,17 +193,81 @@ input::selection {
     position: absolute;
 }
 
-.bouleFourch{
+.bouleFourch {
     height: 17px;
     width: 17px;
     border-radius: 40px;
     background-color: var(--vert);
     position: absolute;
+    cursor: pointer;
 }
 
 /* XXXXXXXXXXXXXXXXXXXX */
 
-.containerBooksByCat{
+.containerWidgetCards{
+    width: 35px;
+    height: 110px;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.4s ease-out;
+}
+
+.btnDynamique{
+    height: 35px;
+    width: 35px;
+    border-radius: 50px;
+    color: var(--blanc-froid);
+    background-color: var(--vert);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.1s ease-out;
+    cursor: pointer;
+}
+
+.btnDynamique:hover{
+    background-color: var(--noir);
+}
+
+.widgetPanier{
+    position: relative;
+    opacity: 100;
+    transition:  0.3s ease-in-out;
+    opacity: 0;
+}
+
+.widgetFullScreen{
+    opacity: 100;
+    position: relative;
+    transition:  0.3s ease-in-out;
+    transition-delay: 0.1s;
+    opacity: 0;
+}
+
+.cards:hover .containerWidgetCards,
+.containerWidgetCards:hover{
+    transform: translateX(-20px);
+}
+
+.cards:hover .widgetPanier,
+.widgetPanier:hover {
+  opacity: 100;
+}
+
+.cards:hover .widgetFullScreen,
+.widgetFullScreen:hover {
+  opacity: 100;
+}
+
+/* XXXXXXXXXXXXXXXXXXXX */
+
+.containerBooksByCat {
     width: 832px;
     height: fit-content;
     flex-wrap: wrap;
@@ -118,16 +275,17 @@ input::selection {
     gap: 22.3px;
 }
 
-.cards{
+.cards {
     width: 262px;
     height: 460px;
     border-radius: 5px;
-    box-shadow: 0px 0px 25px 4px rgba(0,0,0,0.14);
--webkit-box-shadow: 0px 0px 25px 4px rgba(0,0,0,0.14);
--moz-box-shadow: 0px 0px 25px 4px rgba(0,0,0,0.14);
+    box-shadow: 0px 0px 25px 4px rgba(0, 0, 0, 0.14);
+    -webkit-box-shadow: 0px 0px 25px 4px rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: 0px 0px 25px 4px rgba(0, 0, 0, 0.14);
+    position: relative;
 }
 
-.containerCadreImgCards{
+.containerCadreImgCards {
     width: 100%;
     height: 300px;
     border-top-right-radius: 5px;
@@ -137,7 +295,7 @@ input::selection {
     z-index: 0;
 }
 
-.bgDual{
+.bgDual {
     position: absolute;
     height: 500px;
     width: 500px;
@@ -145,21 +303,22 @@ input::selection {
     left: -70px;
     top: -60px;
     rotate: -25deg;
+    overflow: hidden;
 }
 
-.beige{
+.beige {
     height: 100%;
     width: 50%;
     background-color: #f6ebe7;
 }
 
-.gris{
+.gris {
     height: 100%;
     width: 50%;
     background-color: #b5b4bc;
 }
 
-.cadreImgCards{
+.cadreImgCards {
     position: absolute;
     z-index: 2;
     width: 100%;
@@ -172,7 +331,7 @@ input::selection {
     filter: saturate(110%) contrast(120%);
 }
 
-.ombreLivre{
+.ombreLivre {
     position: absolute;
     width: 160px;
     height: 230px;
@@ -181,3 +340,223 @@ input::selection {
     rotate: -25deg;
     background-color: #b5b4bc;
 }
+
+.containerInfoBooksA{
+    position: relative;
+    width: 100%;
+    background-color: var(--blanc-froid);
+    z-index: 1;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cards:hover .containerInfoBooksA,
+.containerInfoBooksA:hover {
+  transform: translateY(-50px);
+  z-index: 2;
+}
+.cards:hover .containeraBtnAdd,
+.containerInfoBooksA:hover .containeraBtnAdd{
+    opacity: 100;
+}
+
+.containerInfoBooks{
+    /* border: 1px solid black; */
+    /* padding: 10px 15px; */
+    position: relative;
+}
+
+.containertitreLivre{
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 45px;
+    line-height: 23px;
+    padding: 10px 15px 0px 15px;
+}
+
+.titreLivre{
+    font-size: 19px;
+    font-weight: bold;
+    color: var(--noir);
+}
+
+.containerAuteurLivre{
+    width: 100%;
+    height: 30px;
+}
+
+.auteurLivre{
+    color:  var(--gris);
+    font-size: 16px;
+    padding: 0px 15px 0px 15px;
+}
+
+.spanAuteur{
+    font-size: 16px;
+    color: var(--noir);
+    font-weight: 500;
+}
+
+.containeraBtnAdd{
+    width: 100%;
+    height: 80px;
+    z-index: 2;
+    position: absolute;
+    background-color: var(--blanc-froid);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding: 15px 15px;
+    opacity: 0;
+    transition: 0.3s ease-out;
+    display: flex;
+    align-items: bottom;
+}
+
+.btnAdd{
+    background-color: var(--vert);
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 3px;
+    color: var(--blanc-froid);
+    position: relative;
+}
+.containerAjoutPanierA{
+    width: 100%;
+    height: 80%;
+}
+
+.containerAjoutPanier{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.containerCompteur{    
+    height: 100%;
+    width: 120px;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerMoinsDelete{
+    height: 100%;
+    width: 33.3%;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.compteur{
+    height: 100%;
+    width: 33.3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blanc-froid);
+    background-color: var(--noir);
+}
+
+.moins{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--noir);
+    color: var(--blanc-froid);
+    font-size: 23px;
+    padding-top: 4px;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+}
+
+.testA{
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+.testB{
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: var(--noir);
+    transition: 0.3s ease-out;
+}
+.testB:hover{
+    background-color: var(--vert);
+}
+
+.trashBtn{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--blanc-froid);
+    font-size: 23px;
+    padding-top: 4px;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+}
+
+.trash{
+    font-size: 20px;
+    padding-bottom: 4px;
+}
+
+.plus{
+    height: 100%;
+    background-color: var(--noir);
+    color: var(--blanc-froid);
+    width: 33.3%;
+    border-radius: 0px 5px 5px 0px;
+    display: flex;
+    align-items: center;
+    font-size: 19px;
+    padding-top: 2px;
+    justify-content: center;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+}
+
+.moins:hover, .plus:hover{
+    background-color: var(--vert);
+}
+
+.totalLivre{
+    color: var(--gris);
+}
+
+.containerNTM{
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    z-index: 2;
+}
+
+.animationBtn{
+    position: absolute;
+    z-index: 1;
+    width: 300px;
+    height: 400px;
+    background-color: var(--noir);
+    left: -410px;
+    top: -100px;
+    rotate: -30deg;
+    transition: 0.5s ease-out;
+}
+
+.btnAdd:hover .animationBtn{
+    left: 0;
+    rotate: 0deg;
+}   

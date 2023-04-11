@@ -25,6 +25,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+#default-carousel{
+  background-color: black;
+  border: 1px solid black;
+}
 
 input[type="search"]::-webkit-search-cancel-button {
   display: none;

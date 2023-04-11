@@ -21,9 +21,9 @@ export default function Join() {
                         <p>Sign up & get 10% of your first books.</p>
                     </div>
                     <div className='containerInputBtnCommunity'>
-                        <form className='formCommu'>
+                        <form className='formCommu '>
                             <div className='inputComm'>
-                                <input type="email" required="" placeholder="Your email" class="email-input pop" />
+                                <input type="email" required="" placeholder="Your email" class="focus:ring-0 email-input pop" />
                             </div>
                             <button type="submit" className='containerBtnCommu'>
                                 <div className='changementFondBtnCommu'></div>
