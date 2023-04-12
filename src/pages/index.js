@@ -38,9 +38,9 @@ export default function Home() {
         <link rel="icon" href="/fav2.png" />
       </Head>
       <Navbar darkMode={darkMode} toggleMode={toggleMode} />
-      <Carousel />
+      <Carousel darkMode={darkMode} />
       <SaleUp darkMode={darkMode} />
-      <Popular />
+      <Popular darkMode={darkMode} />
       <Join darkMode={darkMode} />
       <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     </>
