@@ -7,11 +7,20 @@ import Join from '@/components/Join/Join'
 import SaleUp from '@/components/SaleUp/SaleUp'
 import Popular from '@/components/Popular/Popular'
 import Navbar from '@/components/Navbar/Navbar'
+import Carousel from '@/components/Carousel/Carousel'
 import Test from '@/components/Test/Test'
+import { useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  const [darkMode, setDarkMode] = useState(false);
+
+  function toggleMode() {
+    setDarkMode(!darkMode);
+  }
+
   return (
     <>
       <Head>
@@ -28,10 +37,11 @@ export default function Home() {
         <title>FinalBook</title>
         <link rel="icon" href="/fav2.png" />
       </Head>
-      <Navbar />
-      <SaleUp />
+      <Navbar darkMode={darkMode} toggleMode={toggleMode} />
+      <Carousel />
+      <SaleUp darkMode={darkMode} />
       <Popular />
-      <Join />
+      <Join darkMode={darkMode} />
       <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
     </>
   )

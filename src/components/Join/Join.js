@@ -6,24 +6,24 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 
 
-export default function Join() {
+export default function Join({darkMode}) {
     return (
-        <div className='containerJoin '>
-            <div className='communityCadre'>
+        <div className={`containerJoin ${darkMode ? 'containerJoinB' : ''}`}>
+            <div className={`communityCadre ${darkMode ? 'communityCadreB' : ''}`}>
                 <div className='partLeftJoin'>
                     
                 </div>
                 <div className='partRightJoin'>
-                    <div className='join philo'>
+                    <div className={`join philo ${darkMode ? 'joinB' : ''}`}>
                         <p>Join Our Community</p>
                     </div>
-                    <div className='getOF pop'>
+                    <div className={`getOF pop ${darkMode ? 'getOFB' : ''}`}>
                         <p>Sign up & get 10% of your first books.</p>
                     </div>
                     <div className='containerInputBtnCommunity'>
-                        <form className='formCommu '>
+                        <form className={`formCommu ${darkMode ? 'formCommuB' : ''}`}>
                             <div className='inputComm'>
-                                <input type="email" required="" placeholder="Your email" class="focus:ring-0 email-input pop" />
+                                <input type="email" required="" placeholder="Your email" class={`focus:ring-0 email-input pop" ${darkMode ? 'email-inputB' : ''}`} />
                             </div>
                             <button type="submit" className='containerBtnCommu'>
                                 <div className='changementFondBtnCommu'></div>

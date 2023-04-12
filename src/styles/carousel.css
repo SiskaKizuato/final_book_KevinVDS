@@ -1,0 +1,149 @@
+.containerCarousel{
+  height: 760px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--blanc-casse);
+}
+
+#default-carousel{
+  height: 550px;
+  width: 1123px;
+  background-color: var(--blanc-casse);
+  border: none;
+  border: 1px solid black;
+}
+
+.cadre{
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXX */
+
+.containerCarouselPart{
+  border: 1px solid red;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXX */
+
+.carouselPartL1{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  /* position: relative; */
+}
+
+.investment{
+  font-size: 16px;
+  font-weight:600;
+  color: var(--vert);
+  margin-bottom: 5px;
+}
+
+.loyal{
+  font-size: 55px;
+  font-weight: bold;
+  color: var(--noir);
+  line-height: 70px;
+  margin-bottom: 30px;
+}
+
+.lorem{
+  color: rgba(97, 97, 97, 0.858);
+  font-size: 23px;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+.btnAddCar{
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 3px;
+  color: var(--blanc-froid);
+  position: relative;
+  background-color: var(--vert);
+  width: 140px;
+  height: 50px;
+}
+
+.containerNTMCar{
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  z-index: 2;
+}
+
+.animationBtnCar{
+  position: absolute;
+  z-index: 1;
+  width: 300px;
+  height: 400px;
+  background-color: var(--noir);
+  left: -295px;
+  top: -100px;
+  rotate: -30deg;
+  transition: 0.3s ease-out;
+}
+
+.btnAddCar:hover .animationBtnCar{
+  left: -150px;
+  rotate: 0deg;
+}   
+
+/* XXXXXXXXXXXXXXXXXXXXXX */
+
+.carouselPartR1{
+  height: 100%;
+  width: 50%;
+}
+
+.containerImgCarousel1{
+  height: 100%;
+  width: 100%;
+  background-image: url("../img/hero.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.containerImgCarousel2{
+  height: 100%;
+  width: 100%;
+  background-image: url("../img/hero2.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.containerImgCarousel3{
+  height: 100%;
+  width: 100%;
+  background-image: url("../img/hero3.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.containerImgCarousel4{
+  height: 100%;
+  width: 100%;
+  background-image: url("../img/hero4.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}

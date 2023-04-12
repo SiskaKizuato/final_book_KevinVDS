@@ -75,8 +75,10 @@ export default function ContainerAllBooks() {
     function prixTotal(params) {
         console.log(params);
         setTotal(params*count)
-
     }
+
+    const filteredBooks = selectedCategory === 'All' ? books : 
+    books.filter(book => book.genres.includes(selectedCategory));
 
     return (
         <div className='containerAllBooks'>
@@ -117,8 +119,10 @@ export default function ContainerAllBooks() {
                     </div>
                 </div>
                 <div className='containerBooksByCat'>
-                    {books.map((item, index) => (
-                        <div className='cards' key={item.id}>
+                    {books.map((item) => (
+                        <div key={item.id} className='filtrerDiv'>
+                        {item.genres.includes(selectedCategory) && (
+                            <div className='cards' key={item.id}>
                             <div className='containerWidgetCards'>
                                 <div className='btnDynamique text-[19px] pr-[1px] widgetPanier'>
                                     <AiOutlineShoppingCart />
@@ -148,7 +152,7 @@ export default function ContainerAllBooks() {
                                         <p className='pop nbrPages auteurLivre' key={item.id}>pages: <span className='pop spanAuteur'>{item.num_pages}</span></p>
                                     </div>
                                     <div className='containerAuteurLivre'>
-                                        <p className='pop prixLivre auteurLivre' key={item.id}>price: <span className='spanAuteur pop'>{item.Price}</span></p>
+                                        <p className='pop prixLivre auteurLivre' key={item.id}>price: <span className='spanAuteur pop'>${item.Price}</span></p>
                                     </div>
                                     <div className='containeraBtnAdd'>
                                         <div onClick={(e) => {e.preventDefault();  setTotal(item.Price); handleDisableAdd()}} className={`btnAdd ${disableAdd === 0 ? '' : 'hidden'}`}>
@@ -189,6 +193,8 @@ export default function ContainerAllBooks() {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        )}
                         </div>
                     ))}
                 </div>

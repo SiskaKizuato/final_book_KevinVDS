@@ -7,6 +7,19 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
+    transition: 0.3s ease-out;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.containerNav.containerNavB {
+    background-color: var(--noir);
 }
 
 /* XXXXXXXXXXXXXXXXXXXX */
@@ -52,6 +65,12 @@
     border-radius: 50px;
 }
 
+.burger1.burgerB,
+.burger2.burgerB,
+.burger3.burgerB {
+    background-color: var(--blanc-froid);
+}
+
 .burger:hover .burger1 {
     width: 26px;
 }
@@ -64,6 +83,10 @@
     font-weight: bold;
     color: var(--noir);
     font-size: 28px;
+}
+
+.titreSiteNav.titreSiteNavB {
+    color: var(--blanc-froid);
 }
 
 /* XXXXXXXXXXXXXXXXXXXX */
@@ -103,6 +126,10 @@
     align-items: center;
 }
 
+.containerSearchBar.containerSearchBarB {
+    background-color: var(--vert);
+}
+
 .containerSearch {
     height: 100%;
     width: 50px;
@@ -115,11 +142,16 @@
     color: var(--noir);
     font-size: 18px;
     opacity: 90%;
+    transition: 0.2s ease-in-out;
+}
+
+.btnSearchNavB {
+    color: var(--blanc-froid);
 }
 
 .searchInput {
     background-color: var(--blanc-casse);
-    width: 100%;
+    width: 89%;
     padding-right: 15px;
     padding-left: 3px;
     outline: none;
@@ -127,6 +159,17 @@
     font-size: 18px;
     border: none;
     outline: none;
+    transition: 0.2s ease-in-out;
+    color: var(--noir);
+}
+
+.searchInput.searchInputB {
+    background-color: var(--vert);
+    color: var(--blanc-froid);
+}
+
+.searchInput.searchInputB::placeholder {
+    color: var(--vert-clair);
 }
 
 .containerSearchBar:focus-within {
@@ -155,6 +198,23 @@ input::selection {
     width: 40px;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+.sun {
+    border-radius: 40PX;
+    left: 2px;
+    color: vaR(--vert-clair);
+    position: absolute;
+    z-index: 0;
+}
+
+.moon {
+    position: absolute;
+    border-radius: 40px;
+    right: 2px;
+    color: vaR(--vert-clair);
+    z-index: 0;
 }
 
 .barreMode {
@@ -164,14 +224,26 @@ input::selection {
     display: flex;
     align-items: center;
     background-color: var(--vert);
+    border: 1px solid var(--vert);
     padding: 2px;
+    position: relative;
 }
 
 .bouleMode {
     border-radius: 50px;
-    height: 16px;
-    width: 16px;
+    height: 19px;
+    width: 19px;
+    position: absolute;
+    left: 0.5px;
     background-color: var(--blanc-froid);
+    transition: transform 0.3s;
+    cursor: pointer;
+    z-index: 2;
+    border: 2px solid var(--vert);
+}
+
+.bouleMode.right {
+    transform: translateX(19px);
 }
 
 .containerPhoneNav {
@@ -186,6 +258,11 @@ input::selection {
     color: var(--noir);
     width: 20px;
     height: auto;
+    transition: 0.3s ease-out;
+}
+
+.logoTelNav.logoTelNavB {
+    color: var(--vert-clair);
 }
 
 .numNav {
@@ -195,9 +272,17 @@ input::selection {
     transition: 0.2s ease-out;
 }
 
+.numNav.numNavB {
+    color: var(--blanc-froid);
+}
+
 .numNav:hover {
     color: var(--vert);
     cursor: pointer;
+}
+
+.numNav.numNavB:hover {
+    color: var(--vert-clair);
 }
 
 .containerPanierLogo {
@@ -221,6 +306,11 @@ input::selection {
     align-items: center;
     justify-content: center;
     text-align: center;
+    transition: 0.3s ease-in;
+}
+
+.containerQuantiteNav.containerQuantiteNavB {
+    background-color: var(--vert);
 }
 
 .quantiteNav {
@@ -238,6 +328,10 @@ input::selection {
     border: 50px;
     border-radius: 50px;
     background-color: white;
+}
+
+.containerNav.containerNavB .efface {
+    background-color: var(--noir);
 }
 
 .containerLogoPanierNav {
@@ -258,6 +352,11 @@ input::selection {
     font-size: 50px;
     width: 60px;
     height: 60px;
+    transition: 0.3s ease;
+}
+
+.bag.bagB {
+    color: var(--blanc-froid);
 }
 
 /* XXXXXXXXXXXXXXXX */
@@ -272,7 +371,7 @@ input::selection {
     z-index: 4;
 }
 
-.bgSideBar{
+.bgSideBar {
     position: absolute;
     left: 0;
     width: 100vw;
@@ -285,7 +384,8 @@ input::selection {
     left: 0;
 }
 
-.enTeteSideBar{
+
+.enTeteSideBar {
     width: 100%;
     height: 90px;
     background-color: var(--blanc-casse);
@@ -295,13 +395,13 @@ input::selection {
     padding: 0px 30px 0px 30px;
 }
 
-.containerTitreSide{
+.containerTitreSide {
     font-size: 25px;
     font-weight: bold;
     color: var(--noir);
 }
 
-.containerCross{
+.containerCross {
     width: 25px;
     height: 25px;
     font-size: 23px;
@@ -312,7 +412,7 @@ input::selection {
     cursor: pointer;
 }
 
-.listeSideBar{
+.listeSideBar {
     padding: 60px 30px 20px 30px;
     display: flex;
     flex-direction: column;
@@ -320,11 +420,11 @@ input::selection {
     cursor: pointer;
 }
 
-.catSideBar{
+.catSideBar {
     color: var(--noir);
     transition: 0.2s ease-out;
 }
 
-.catSideBar:hover{
+.catSideBar:hover {
     color: var(--vert);
 }
