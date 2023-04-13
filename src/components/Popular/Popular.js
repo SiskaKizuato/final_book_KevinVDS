@@ -180,7 +180,7 @@ export default function Popular({ darkMode }) {
                                                     </div>
 
                                                     <div>
-                                                        <p className='pop totalLivre'>${total} </p>
+                                                        <p className={`pop totalLivre ${darkMode ? 'vertCommu' : ''}`}>${total} </p>
                                                     </div>
                                                 </div>
                                             </div>

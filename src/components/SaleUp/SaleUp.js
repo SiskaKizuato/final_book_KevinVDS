@@ -1,6 +1,8 @@
 import React from 'react'
+import { useState, useEffect } from 'react';
 
 export default function SaleUp({ darkMode }) {
+
     return (
         <div className={`containerSaleUp ${darkMode ? 'containerSaleUpB' : ''}`}>
             <div className={`divSale ${darkMode ? 'divSaleB' : ''}`}>

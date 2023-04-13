@@ -12,6 +12,7 @@ import Test from '@/components/Test/Test'
 import { useDispatch, useSelector } from 'react-redux'
 import { useState, useEffect } from 'react'
 import { switchDarkMode } from '@/features/darkMode/darkModeSlice'
+import { useRouter } from 'next/router'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,6 +22,10 @@ export default function Home() {
 
   function toggleMode() {
     dispatch(switchDarkMode())
+  }
+
+  const handleCardClick = () => {
+    Router.push(`/Popular/${PopularId}`)
   }
 
   return (

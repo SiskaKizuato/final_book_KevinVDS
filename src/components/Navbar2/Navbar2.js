@@ -100,7 +100,7 @@ export default function Navbar2({toggleMode}) {
                         <p>All Books</p>
                     </Link>
                     <div className={`pop catSideBar ${darkMode ? 'catSideBarB' : ''}`}>
-                        <p>Sign In</p>
+                        <p>Sign In/Sign Up</p>
                     </div>
                 </div>
             </div>

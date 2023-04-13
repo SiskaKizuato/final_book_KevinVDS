@@ -31,7 +31,7 @@ export default function allBooks() {
                 <link rel="icon" href="/fav2.png" />
             </Head>
             <Navbar2 darkMode={darkMode} toggleMode={toggleMode} />
-            <ContainerAllBooks />
+            <ContainerAllBooks darkMode={darkMode} toggleMode={toggleMode}/>
         </>
     )
 }

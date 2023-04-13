@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 6% 4% 0% 6%;
+    padding: 6% 4% 6% 6%;
 }
 
 /* XXXXXXXXXXXXXXXXXXXX */
@@ -82,7 +82,7 @@ input::selection {
     /* border-bottom: 0.7px solid rgba(0, 0, 0, 0.15); */
 }
 
-.authorList{
+.authorList {
     width: 100%;
     height: 50px;
     border-radius: 7px;
@@ -96,7 +96,7 @@ input::selection {
     background-color: var(--blanc-casse);
 }
 
-.selectionAuteur{
+.selectionAuteur {
     width: 100%;
     height: 100%;
     border-radius: inherit;
@@ -120,9 +120,9 @@ input::selection {
     border: 2px solid var(--noir);
 }
 
-.containerListeAuteursA{
+.containerListeAuteursA {
     background-color: var(--blanc-froid);
-    width: 260px;
+    width: 250px;
     height: fit-content;
     position: absolute;
     box-shadow: 0px 0px 25px 2px rgba(0, 0, 0, 0.14);
@@ -130,7 +130,7 @@ input::selection {
     -moz-box-shadow: 0px 0px 25px 2px rgba(0, 0, 0, 0.14);
     display: flex;
     z-index: 1;
-    top: 49px;
+    top: 51px;
     align-items: center;
     justify-content: left;
     text-align: left;
@@ -140,30 +140,31 @@ input::selection {
     border-left: 1px dotted rgba(0, 0, 0, 0.324);
     border-right: 1px dotted rgba(0, 0, 0, 0.324);
 }
+
 .hidden {
     display: none;
 }
 
-.containerListeAuteursB{
+.containerListeAuteursB {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.auteursSkin{
+.auteursSkin {
     width: 100%;
     height: 27px;
     padding: 2px 10px 0px 10px;
 }
 
-.auteursSkin:hover{
+.auteursSkin:hover {
     color: var(--blanc-froid);
     background-color: var(--vert);
     cursor: pointer;
 }
 
-.fourchettePrix {
+/* .fourchettePrix {
     color: var(--gris);
     margin: 12px 0px;
 }
@@ -182,9 +183,9 @@ input::selection {
     display: flex;
     align-items: center;
     position: relative;
-}
+} */
 
-.barreFourch {
+/* .barreFourch {
     width: 100%;
     height: 8px;
     border: 1px solid rgba(0, 0, 0, 0.301);
@@ -200,11 +201,11 @@ input::selection {
     background-color: var(--vert);
     position: absolute;
     cursor: pointer;
-}
+} */
 
 /* XXXXXXXXXXXXXXXXXXXX */
 
-.containerWidgetCards{
+.containerWidgetCards {
     width: 35px;
     height: 110px;
     position: absolute;
@@ -218,7 +219,7 @@ input::selection {
     transition: 0.4s ease-out;
 }
 
-.btnDynamique{
+.btnDynamique {
     height: 35px;
     width: 35px;
     border-radius: 50px;
@@ -231,48 +232,48 @@ input::selection {
     cursor: pointer;
 }
 
-.btnDynamique:hover{
+.btnDynamique:hover {
     background-color: var(--noir);
 }
 
-.widgetPanier{
+.widgetPanier {
     position: relative;
     opacity: 100;
-    transition:  0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
     opacity: 0;
 }
 
-.widgetFullScreen{
+.widgetFullScreen {
     opacity: 100;
     position: relative;
-    transition:  0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
     transition-delay: 0.1s;
     opacity: 0;
 }
 
 .cards:hover .containerWidgetCards,
 .cards2:hover .containerWidgetCards,
-.containerWidgetCards:hover{
+.containerWidgetCards:hover {
     transform: translateX(-20px);
 }
 
 .cards:hover .widgetPanier,
 .cards2:hover .widgetPanier,
 .widgetPanier:hover {
-  opacity: 100;
+    opacity: 100;
 }
 
 .cards:hover .widgetFullScreen,
 .cards2:hover .widgetFullScreen,
 .widgetFullScreen:hover {
-  opacity: 100;
+    opacity: 100;
 }
 
 
 
 /* XXXXXXXXXXXXXXXXXXXX */
 
-.containerContainerBooksByCat{
+.containerContainerBooksByCat {
     width: 900px;
     height: fit-content;
     display: flex;
@@ -283,9 +284,9 @@ input::selection {
 
 /* XXXXXXXXXXXXXXXXXXXXX */
 
-.containerMiseEnPage{
-    border: 1px solid red;
-    width: 100%;
+.containerMiseEnPage {
+    margin-right: 32px;
+    width: 97%;
     height: 50px;
     display: flex;
     align-items: center;
@@ -293,14 +294,14 @@ input::selection {
     margin-bottom: 20px;
 }
 
-.miseEnpage{
+.miseEnpage {
     height: fit-content;
     width: 60px;
     display: flex;
     justify-content: space-between;
 }
 
-.cadreMeP{
+.cadreMeP {
     border: 1px solid var(--gris-clair);
     height: 25px;
     border-radius: 3px;
@@ -309,13 +310,18 @@ input::selection {
     align-items: center;
     justify-content: center;
     gap: 3px;
+    transition: 0.1s ease-in-out;
 }
 
-.cadreMeP.cadreMePV{
-    border: 1px solid var(--vert);
+.cadreMeP.cadreMePV {
+    border: 1.5px solid var(--vert);
 }
 
-.logoMEP{
+.logoMEP.logoMEPV {
+    color: var(--vert)
+}
+
+.logoMEP {
     width: 100%;
     height: 100%;
     display: flex;
@@ -324,21 +330,23 @@ input::selection {
     font-size: 15px;
     border-radius: inherit;
     color: var(--noir);
+    transition: 0.1s ease-in-out;
 }
 
-.containerAvailable{
+.containerAvailable {
     height: fit-content;
     width: fit-content;
     display: flex;
     color: var(--noir);
     justify-content: center;
     align-items: center;
+    transition: 0.3s;
 }
 
-.containerFiltreMiseEnPage{
-    border: 1px solid red;
-    height: 25px;
-    width: 100px;
+.containerFiltreMiseEnPage {
+    height: 30px;
+    width: 145px;
+    border-radius: 5px;
 }
 
 /* XXXXXXXXXXXXXXXXXXXXX */
@@ -360,6 +368,14 @@ input::selection {
     position: relative;
     margin-right: 26px;
     margin-bottom: 23px;
+    transition: 0.3s ease-out;
+    overflow: hidden;
+}
+
+.cards.cardsB {
+    -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.30);
+    -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.30);
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.30);
 }
 
 .containerCadreImgCards {
@@ -418,7 +434,7 @@ input::selection {
     background-color: #b5b4bc;
 }
 
-.containerInfoBooksA{
+.containerInfoBooksA {
     position: relative;
     width: 100%;
     height: 160px;
@@ -428,68 +444,69 @@ input::selection {
     border-bottom-left-radius: 5px;
     transition: transform 0.3s ease-in-out;
     transition: 0.3s;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
-.containerInfoBooksA.containerInfoBooksAB{
+.containerInfoBooksA.containerInfoBooksAB {
     background-color: var(--vert-fonce);
 }
 
 .cards:hover .containerInfoBooksA,
 .cards2:hover .containerInfoBooksA,
 .containerInfoBooksA:hover {
-  transform: translateY(-70px);
-  z-index: 2;
+    transform: translateY(-70px);
+    z-index: 2;
 }
+
 .cards:hover .containeraBtnAdd,
 .cards2:hover .containeraBtnAdd,
-.containerInfoBooksA:hover .containeraBtnAdd{
+.containerInfoBooksA:hover .containeraBtnAdd {
     opacity: 100;
     z-index: 2;
 }
 
-.containerInfoBooks{
-    /* border: 1px solid black; */
-    /* padding: 10px 15px; */
+.containerInfoBooks {
     position: relative;
+    height: 100%;
 }
 
-.containertitreLivre{
-    /* border: 1px solid black; */
+.containertitreLivre {
     width: 100%;
     height: 60px;
     line-height: 23px;
     padding: 10px 15px 0px 15px;
 }
 
-.titreLivre{
+.titreLivre {
     font-size: 19px;
     font-weight: bold;
     color: var(--noir);
     transition: 0.3s ease-out;
 }
 
-.titreLivre.titreLivreB{
+.titreLivre.titreLivreB {
     color: var(--blanc-casse);
 }
 
-.containerAuteurLivre{
+.containerAuteurLivre {
     width: 100%;
     height: 30px;
 }
 
-.auteurLivre{
-    color:  var(--gris);
+.auteurLivre {
+    color: var(--gris);
     font-size: 16px;
     padding: 0px 15px 0px 15px;
     transition: 0.3s ease-out;
     transition-delay: 0.1s;
 }
 
-.auteurLivre.vc{
+.auteurLivre.vc {
     color: var(--vert-clair);
 }
 
-.spanAuteur{
+.spanAuteur {
     font-size: 16px;
     color: var(--noir);
     font-weight: 500;
@@ -497,11 +514,11 @@ input::selection {
     transition-delay: 0.2s;
 }
 
-.spanAuteur.bc{
+.spanAuteur.bc {
     color: var(--blanc-casse);
 }
 
-.containeraBtnAdd{
+.containeraBtnAdd {
     width: 100%;
     height: 80px;
     z-index: 0;
@@ -516,11 +533,11 @@ input::selection {
     align-items: bottom;
 }
 
-.containeraBtnAdd.containeraBtnAddB{
+.containeraBtnAdd.containeraBtnAddB {
     background-color: var(--vert-fonce);
 }
 
-.btnAdd{
+.btnAdd {
     background-color: var(--vert);
     overflow: hidden;
     height: 100%;
@@ -532,16 +549,16 @@ input::selection {
     transition: 0.3s ease-in-out;
 }
 
-.btnAdd.btnAddB{
+.btnAdd.btnAddB {
     border: 1px solid var(--vert-clair);
 }
 
-.containerAjoutPanierA{
+.containerAjoutPanierA {
     width: 100%;
     height: 80%;
 }
 
-.containerAjoutPanier{
+.containerAjoutPanier {
     width: 100%;
     height: 100%;
     display: flex;
@@ -550,7 +567,7 @@ input::selection {
     margin-top: 10px;
 }
 
-.containerCompteur{    
+.containerCompteur {
     height: 100%;
     width: 120px;
     border-radius: 5px;
@@ -560,13 +577,13 @@ input::selection {
     justify-content: center;
 }
 
-.containerMoinsDelete{
+.containerMoinsDelete {
     height: 100%;
     width: 33.3%;
     border-radius: 5px 0px 0px 5px;
 }
 
-.compteur{
+.compteur {
     height: 100%;
     width: 33.3%;
     display: flex;
@@ -576,7 +593,7 @@ input::selection {
     background-color: var(--noir);
 }
 
-.moins{
+.moins {
     height: 100%;
     width: 100%;
     display: flex;
@@ -590,23 +607,25 @@ input::selection {
     cursor: pointer;
 }
 
-.testA{
+.testA {
     width: 100%;
     height: 100%;
     color: white;
 }
-.testB{
+
+.testB {
     width: 100%;
     height: 100%;
     color: white;
     background-color: var(--noir);
     transition: 0.3s ease-out;
 }
-.testB:hover{
+
+.testB:hover {
     background-color: var(--vert);
 }
 
-.trashBtn{
+.trashBtn {
     height: 100%;
     width: 100%;
     display: flex;
@@ -619,12 +638,12 @@ input::selection {
     cursor: pointer;
 }
 
-.trash{
+.trash {
     font-size: 20px;
     padding-bottom: 4px;
 }
 
-.plus{
+.plus {
     height: 100%;
     background-color: var(--noir);
     color: var(--blanc-froid);
@@ -639,15 +658,16 @@ input::selection {
     cursor: pointer;
 }
 
-.moins:hover, .plus:hover{
+.moins:hover,
+.plus:hover {
     background-color: var(--vert);
 }
 
-.totalLivre{
+.totalLivre {
     color: var(--gris);
 }
 
-.containerNTM{
+.containerNTM {
     height: 100%;
     width: 100%;
     border-radius: inherit;
@@ -659,7 +679,7 @@ input::selection {
     z-index: 2;
 }
 
-.animationBtn{
+.animationBtn {
     position: absolute;
     z-index: 1;
     width: 300px;
@@ -671,9 +691,119 @@ input::selection {
     transition: 0.5s ease-out;
 }
 
-.btnAdd:hover .animationBtn{
+.btnAdd:hover .animationBtn {
     left: 0;
     rotate: 0deg;
-}   
+}
 
 /* XXXXXXXXXXXXXXXXXX */
+
+.dropdownMeP {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.menuMeP {
+    background-color: var(--blanc-casse);
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(128, 128, 128, 0.242);
+    transition: 0.3s;
+}
+
+.menuMeP.bgV{
+    background-color: var(--vert);
+    color: var(--blanc-casse);
+}
+
+.dropdown-menuMeP {
+    position: absolute;
+    top: 105%;
+    left: 0;
+    background-color: var(--blanc-casse);
+    border: 1px solid #ccc;
+    z-index: 1;
+    width: 145px;
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.242);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.30);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.30);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.30);
+}
+
+.dropdown-menuMeP.bgVc {
+    background-color: var(--vert);
+    border: 1px solid var(--vert-clair);
+}
+
+.alpHover {
+    color: var(--noir);
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.alpHover:hover {
+    background-color: var(--vert);
+    color: var(--blanc-froid);
+}
+
+
+.dropdown-menuMeP div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-menu div:hover {
+    background-color: #f1f1f1;
+}
+
+
+/* XXXXXXXXXXXX */
+
+.bgBf {
+    background-color: var(--blanc-froid);
+    transition: 0.3s ease-out;
+}
+
+.bgBf.bgBn {
+    background-color: var(--footer);
+}
+
+.containerInfoBooks.containerInfoBooksB {
+    background-color: var(--vert-fonce);
+}
+
+.totalLivre.vertCommu {
+    color: var(--vert-commu);
+}
+
+
+.containerAvailable.colorVc{
+    color: var(--vert-clair);
+}
+
+.colorBf{
+    color: var(--blanc-froid);
+}
+
+.logoMEP.colorBc,
+.alpHover.colorBc{
+    color: var(--blanc-casse);
+}
+
+.borderBc{
+    border: 1px solid var(--blanc-casse);    
+}
+
+
+.alpHover:hover.colorBc{
+    background-color: var(--noir);
+}
