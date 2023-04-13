@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 6% 6%;
+    padding: 6% 4% 0% 6%;
 }
 
 /* XXXXXXXXXXXXXXXXXXXX */
@@ -272,12 +272,82 @@ input::selection {
 
 /* XXXXXXXXXXXXXXXXXXXX */
 
+.containerContainerBooksByCat{
+    width: 900px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* XXXXXXXXXXXXXXXXXXXXX */
+
+.containerMiseEnPage{
+    border: 1px solid red;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.miseEnpage{
+    height: fit-content;
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cadreMeP{
+    border: 1px solid var(--gris-clair);
+    height: 25px;
+    border-radius: 3px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.cadreMeP.cadreMePV{
+    border: 1px solid var(--vert);
+}
+
+.logoMEP{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    border-radius: inherit;
+    color: var(--noir);
+}
+
+.containerAvailable{
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    color: var(--noir);
+    justify-content: center;
+    align-items: center;
+}
+
+.containerFiltreMiseEnPage{
+    border: 1px solid red;
+    height: 25px;
+    width: 100px;
+}
+
+/* XXXXXXXXXXXXXXXXXXXXX */
+
 .containerBooksByCat {
-    width: 832px;
+    width: 100%;
     height: fit-content;
     flex-wrap: wrap;
     display: flex;
-    gap: 22.3px;
 }
 
 .cards {
@@ -288,6 +358,8 @@ input::selection {
     -webkit-box-shadow: 0px 0px 25px 4px rgba(0, 0, 0, 0.14);
     -moz-box-shadow: 0px 0px 25px 4px rgba(0, 0, 0, 0.14);
     position: relative;
+    margin-right: 26px;
+    margin-bottom: 23px;
 }
 
 .containerCadreImgCards {

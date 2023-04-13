@@ -371,6 +371,10 @@ input::selection {
     z-index: 4;
 }
 
+.sidebar.sidebarB{
+    background-color: var(--footer);
+}
+
 .bgSideBar {
     position: absolute;
     left: 0;
@@ -392,13 +396,22 @@ input::selection {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: 0.3s ease-out;
     padding: 0px 30px 0px 30px;
+}
+
+.enTeteSideBar.enTeteSideBarB{
+    background-color: var(--vert);
 }
 
 .containerTitreSide {
     font-size: 25px;
     font-weight: bold;
     color: var(--noir);
+}
+
+.containerTitreSide.containerTitreSideB{
+    color: var(--blanc-casse);
 }
 
 .containerCross {
@@ -427,4 +440,13 @@ input::selection {
 
 .catSideBar:hover {
     color: var(--vert);
+}
+
+.catSideBarB{
+    color: var(--blanc-casse);
+    transition: 0.3s ease-out;
+}
+
+.catSideBarB:hover{
+    color: var(--vert-clair) !important;
 }

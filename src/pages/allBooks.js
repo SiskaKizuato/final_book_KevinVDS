@@ -2,10 +2,17 @@ import React from 'react'
 import Navbar2 from '@/components/Navbar2/Navbar2'
 import ContainerAllBooks from '@/components/ContainerAllBooks/ContainerAllBooks';
 import Head from 'next/head'
-
-
+import { useDispatch, useSelector } from 'react-redux'
+import { switchDarkMode } from '@/features/darkMode/darkModeSlice'
 
 export default function allBooks() {
+
+    const dispatch = useDispatch();
+    const darkMode = useSelector((state) => state.darkMode.value)
+
+    function toggleMode() {
+        dispatch(switchDarkMode())
+    }
 
     return (
         <>
@@ -23,7 +30,7 @@ export default function allBooks() {
                 <title>FinalBook</title>
                 <link rel="icon" href="/fav2.png" />
             </Head>
-            <Navbar2 />
+            <Navbar2 darkMode={darkMode} toggleMode={toggleMode} />
             <ContainerAllBooks />
         </>
     )

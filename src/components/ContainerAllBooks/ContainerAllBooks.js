@@ -6,6 +6,8 @@ import { CgTrashEmpty } from "react-icons/cg";
 import { AiOutlineFullscreen } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
 import { decrement, increment, incrementByAmount, decrementByAmount, reset } from "../../features/counter/counter.slice";
+import {BsFillGridFill} from "react-icons/bs"
+import { HiOutlineBars4 } from "react-icons/hi2";
 
 export default function ContainerAllBooks() {
 
@@ -74,11 +76,11 @@ export default function ContainerAllBooks() {
 
     function prixTotal(params) {
         console.log(params);
-        setTotal(params*count)
+        setTotal(params * count)
     }
 
-    const filteredBooks = selectedCategory === 'All' ? books : 
-    books.filter(book => book.genres.includes(selectedCategory));
+    const filteredBooks = selectedCategory === 'All' ? books :
+        books.filter(book => book.genres.includes(selectedCategory));
 
     return (
         <div className='containerAllBooks'>
@@ -118,85 +120,107 @@ export default function ContainerAllBooks() {
                         </div>
                     </div>
                 </div>
-                <div className='containerBooksByCat'>
-                    {books.map((item) => (
-                        <div key={item.id} className='filtrerDiv'>
-                        {item.genres.includes(selectedCategory) && (
-                            <div className='cards' key={item.id}>
-                            <div className='containerWidgetCards'>
-                                <div className='btnDynamique text-[19px] pr-[1px] widgetPanier'>
-                                    <AiOutlineShoppingCart />
-                                </div>
-                                <div className='btnDynamique text-[20px] widgetFullScreen'>
-                                    <AiOutlineFullscreen />
+                <div className='containerContainerBooksByCat'>
+                    <div className='containerMiseEnPage'>
+                        <div className='miseEnpage'>
+                            <div className='cadreMeP miseEnPage1'>
+                                <div className='logoMEP mep1'>
+                                    <BsFillGridFill />
                                 </div>
                             </div>
-                            <div className='containerCadreImgCards'>
-                                <div className='bgDual'>
-                                    <div className='beige'></div>
-                                    <div className='gris'></div>
+                            <div className='cadreMeP miseEnPage2'>
+                                <div className='logoMEP mep2'>
+                                    <HiOutlineBars4 />
                                 </div>
-                                <div className='cadreImgCards' style={{ backgroundImage: `url(${item.image_url})` }}>
-                                </div>
-                                <div className='ombreLivre'></div>
                             </div>
-                            <div className='containerInfoBooksA'>
-                                <div className='containerInfoBooks'>
-                                    <div className='containertitreLivre'>
-                                        <p className='philo titreLivre' key={item.id}>{item.title}</p>
-                                    </div>
-                                    <div className='containerAuteurLivre'>
-                                        <p className='pop auteurLivre' key={item.id}>By: <span className='spanAuteur pop'>{item.authors}</span></p>
-                                    </div>
-                                    <div className='containerAuteurLivre'>
-                                        <p className='pop nbrPages auteurLivre' key={item.id}>pages: <span className='pop spanAuteur'>{item.num_pages}</span></p>
-                                    </div>
-                                    <div className='containerAuteurLivre'>
-                                        <p className='pop prixLivre auteurLivre' key={item.id}>price: <span className='spanAuteur pop'>${item.Price}</span></p>
-                                    </div>
-                                    <div className='containeraBtnAdd'>
-                                        <div onClick={(e) => {e.preventDefault();  setTotal(item.Price); handleDisableAdd()}} className={`btnAdd ${disableAdd === 0 ? '' : 'hidden'}`}>
-                                            <div className='containerNTM'>
-                                                <AiOutlineShoppingCart className='logoPanierBtnAdd' />
-                                                <p className='pop'>Add to cart</p>
-                                            </div>
-                                            <div className='animationBtn'></div>
-                                        </div>
-                                        <div className={`containerAjoutPanierA ${disableAdd === 0 ? 'hidden' : ''}`}>
-                                            <div className='containerAjoutPanier'>
-                                                <div className='containerCompteur'>
-                                                    <div className='containerMoinsDelete'>
-                                                        <div onClick={() => dispatch(decrement())} className={`testA ${count > 1 ? '' : 'hidden'}`}>
-                                                            <div className={`moins pop`}>
-                                                                <p className={`pBtnMoins`}>-</p>
-                                                            </div>
-                                                        </div>
-                                                        <div onClick={handleEnableAdd} className={`testB ${count > 1 ? 'hidden' : ''}`}>
-                                                            <div className={`trashBtn pop`}>
-                                                                <CgTrashEmpty className={`trash`} />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className='compteur pop'>
-                                                        <p>{count}</p>
-                                                    </div>
-                                                    <div onClick={(e) => {e.preventDefault(); dispatch(increment()); prixTotal(item.Price)}} className='plus pop'>
-                                                        <p>+</p>
-                                                    </div>
-                                                </div>
+                        </div>
+                        <div className='containerAvailable pop'>
+                            <p>Products Available</p>
+                        </div>
+                        <div className='containerFiltreMiseEnPage'>
 
-                                                <div>
-                                                    <p className='pop totalLivre'>${total} </p>
+                        </div>
+                    </div>
+                    <div className='containerBooksByCat'>
+                        {books.map((item) => (
+                            <div key={item.id} className='filtrerDiv'>
+                                {item.genres.includes(selectedCategory) && (
+                                    <div className='cards' key={item.id}>
+                                        <div className='containerWidgetCards'>
+                                            <div className='btnDynamique text-[19px] pr-[1px] widgetPanier'>
+                                                <AiOutlineShoppingCart />
+                                            </div>
+                                            <div className='btnDynamique text-[20px] widgetFullScreen'>
+                                                <AiOutlineFullscreen />
+                                            </div>
+                                        </div>
+                                        <div className='containerCadreImgCards'>
+                                            <div className='bgDual'>
+                                                <div className='beige'></div>
+                                                <div className='gris'></div>
+                                            </div>
+                                            <div className='cadreImgCards' style={{ backgroundImage: `url(${item.image_url})` }}>
+                                            </div>
+                                            <div className='ombreLivre'></div>
+                                        </div>
+                                        <div className='containerInfoBooksA'>
+                                            <div className='containerInfoBooks'>
+                                                <div className='containertitreLivre'>
+                                                    <p className='philo titreLivre' key={item.id}>{item.title}</p>
+                                                </div>
+                                                <div className='containerAuteurLivre'>
+                                                    <p className='pop auteurLivre' key={item.id}>By: <span className='spanAuteur pop'>{item.authors}</span></p>
+                                                </div>
+                                                <div className='containerAuteurLivre'>
+                                                    <p className='pop nbrPages auteurLivre' key={item.id}>pages: <span className='pop spanAuteur'>{item.num_pages}</span></p>
+                                                </div>
+                                                <div className='containerAuteurLivre'>
+                                                    <p className='pop prixLivre auteurLivre' key={item.id}>price: <span className='spanAuteur pop'>${item.Price}</span></p>
+                                                </div>
+                                                <div className='containeraBtnAdd'>
+                                                    <div onClick={(e) => { e.preventDefault(); setTotal(item.Price); handleDisableAdd() }} className={`btnAdd ${disableAdd === 0 ? '' : 'hidden'}`}>
+                                                        <div className='containerNTM'>
+                                                            <AiOutlineShoppingCart className='logoPanierBtnAdd' />
+                                                            <p className='pop'>Add to cart</p>
+                                                        </div>
+                                                        <div className='animationBtn'></div>
+                                                    </div>
+                                                    <div className={`containerAjoutPanierA ${disableAdd === 0 ? 'hidden' : ''}`}>
+                                                        <div className='containerAjoutPanier'>
+                                                            <div className='containerCompteur'>
+                                                                <div className='containerMoinsDelete'>
+                                                                    <div onClick={() => dispatch(decrement())} className={`testA ${count > 1 ? '' : 'hidden'}`}>
+                                                                        <div className={`moins pop`}>
+                                                                            <p className={`pBtnMoins`}>-</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div onClick={handleEnableAdd} className={`testB ${count > 1 ? 'hidden' : ''}`}>
+                                                                        <div className={`trashBtn pop`}>
+                                                                            <CgTrashEmpty className={`trash`} />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div className='compteur pop'>
+                                                                    <p>{count}</p>
+                                                                </div>
+                                                                <div onClick={(e) => { e.preventDefault(); dispatch(increment()); prixTotal(item.Price) }} className='plus pop'>
+                                                                    <p>+</p>
+                                                                </div>
+                                                            </div>
+
+                                                            <div>
+                                                                <p className='pop totalLivre'>${total} </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                )}
                             </div>
-                        </div>
-                        )}
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

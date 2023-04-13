@@ -9,16 +9,18 @@ import Popular from '@/components/Popular/Popular'
 import Navbar from '@/components/Navbar/Navbar'
 import Carousel from '@/components/Carousel/Carousel'
 import Test from '@/components/Test/Test'
-import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useState, useEffect } from 'react'
+import { switchDarkMode } from '@/features/darkMode/darkModeSlice'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-
-  const [darkMode, setDarkMode] = useState(false);
+  const dispatch=useDispatch();
+  const darkMode=useSelector((state)=>state.darkMode.value)
 
   function toggleMode() {
-    setDarkMode(!darkMode);
+    dispatch(switchDarkMode())
   }
 
   return (
@@ -46,4 +48,3 @@ export default function Home() {
     </>
   )
 }
-

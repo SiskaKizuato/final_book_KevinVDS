@@ -13,7 +13,7 @@
         return (
             <div className={`containerCarousel ${darkMode ? 'containerCarouselB' : ''}`}>
                 <div className="containerPerles">
-                    <div className={`perle ${compteurCrsl === 0 ? "perleActive" : ""} ${darkMode ? 'perleActiveB' : ''}`}></div>
+                    <div className={`perle ${compteurCrsl   === 0 ? "perleActive" : ""} ${darkMode ? 'perleActiveB' : ''}`}></div>
                     <div className={`perle ${compteurCrsl === 1 ? "perleActive" : ""} ${darkMode ? 'perleActiveB' : ''}`}></div>
                     <div className={`perle ${compteurCrsl === 2 ? "perleActive" : ""} ${darkMode ? 'perleActiveB' : ''}`}></div>
                     <div className={`perle ${compteurCrsl === 3 ? "perleActive" : ""} ${darkMode ? 'perleActiveB' : ''}`}></div>
