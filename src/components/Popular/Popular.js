@@ -111,7 +111,7 @@ export default function Popular({ darkMode }) {
 
                     {books.filter(book => {
                         return searchVal === "" ? book :
-                            book.title.toLowerCase().includes(searchVal.toLowerCase()) 
+                            book.title.toLowerCase().includes(searchVal.toLowerCase())
                             ||
                             book.authors.toLowerCase().includes(searchVal.toLowerCase())
                     }).map((item) => (
