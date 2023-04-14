@@ -78,3 +78,134 @@ a::selection {
   border-radius: 55px;
 }
 
+@media screen and (min-width: 319px) and (max-width: 768px) {
+  .containerNav{
+    width: 100%;
+    display: flex !important;
+    gap: 10px;
+    height: auto !important;
+    flex-direction: column !important; 
+    /* flex-wrap: wrap !important; */
+    /* background-color: red; */
+    /* border: 1px solid red; */
+  }
+  .containerSearchBar{
+    width: 250px !important;
+    height: 60px !important;
+  }
+  .containerCarousel{
+    width: 100% !important;
+    height: auto !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .containerCarouselPart{
+    display: flex;
+    flex-direction: column;
+    height: 900px !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  #default-carousel {
+    width: 100% !important;
+    height: 900px !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .loyal{
+    font-size: 35px !important;
+    padding-top: 50px;
+    line-height: 35px !important;
+  }
+  .containerSaleUp{
+    height: 1200px !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    overflow-y: hidden !important
+  }
+  .divSale{
+    flex-direction: column !important;
+    height: 600px !important;
+    width: 320px !important;
+  }
+  .casseCouille{
+    width: 100% !important;
+  }
+  .divSaleR{
+    height: 500px !important;
+    width : 320px !important;
+  }
+  .containerJoin{
+    width: 320px !important;
+    display: flex !important;
+    height: 650px !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+  }
+  .communityCadre{
+    width: 320px !important;
+    height: 650px !important;
+    flex-direction: column;
+    gap: 20px !important;
+
+  }
+  .partLeftJoin{
+    height: 260px !important;
+    width: 100% !important;
+  }
+  .partRightJoin{
+    width: 100% !important; 
+    justify-content: center !important; 
+    text-align: center !important;
+  }
+  .email-input{
+    flex-direction: column !important;
+    height: auto !important;
+  }
+  .containerWidgetCommunity{
+    justify-content: center !important;
+  }
+  .containerInputBtnCommunity{
+    flex-direction: column !important;
+    height: auto !important;
+  }
+  .formCommu{
+    height: 60px !important;
+  }
+  .inputComm{
+    width: 50% !important;
+  }
+  .containerBtnCommu{
+    justify-content: center;
+    align-items: center;
+    /* padding-right: 17px; */
+    font-size: x-small;
+  }
+  .subs{
+    padding-left: 0px !important;
+  }
+  .containerFooter{
+    height: auto !important;
+    padding: 50px 15px !important;
+  }
+  .divMidF{
+    align-items: center;
+    padding-right: 170px;
+    padding-bottom: 50px;
+    flex-direction: column !important;
+  }
+  .divInfF{
+    flex-direction: column;
+    padding-top: 50px;
+    gap: 20px !important;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+  }
+  .copyrightF{
+    flex-direction: column;
+  }
+}

@@ -40,7 +40,9 @@ export default function Home() {
         <title>FinalBook</title>
         <link rel="icon" href="/fav2.png" />
       </Head>
+      <div className='w-full'>
       <Navbar darkMode={darkMode} toggleMode={toggleMode} />
+      </div>
       <Carousel darkMode={darkMode} />
       <SaleUp darkMode={darkMode} />
       <Popular darkMode={darkMode} />

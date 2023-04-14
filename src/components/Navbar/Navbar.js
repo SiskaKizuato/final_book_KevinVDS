@@ -55,7 +55,7 @@ export default function Navbar({ darkMode, toggleMode }) {
                 <div className='paddSearch'>
                     <div className={`containerSearchBar ${darkMode ? 'containerSearchBarB' : ''}`}>
                         <div className='containerSearch'><BsSearch className={`btnSearchNav ${darkMode ? 'btnSearchNavB' : ''}`} /></div>
-                        <input value={searchVal} onChange={(e) => {dispatch(setSearchVal(e.target.value))}} type="search" className={`searchInput focus:ring-0 ${darkMode ? 'searchInputB' : ''}`} placeholder='Search your book here' />
+                        <input value={searchVal} onChange={(e) => {dispatch(setSearchVal(e.target.value))}} type="search" className={`media02 searchInput focus:ring-0 ${darkMode ? 'searchInputB' : ''}`} placeholder='Search your book here' />
                     </div>
                 </div>
             </div>

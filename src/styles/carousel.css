@@ -14,7 +14,7 @@
   background-color: var(--footer);
   -webkit-box-shadow: 0px 5px 80px 10px rgba(0, 0, 0, 0.40);
   -moz-box-shadow: 0px 5px 80px 10px rgba(0, 0, 0, 0.40);
-   box-shadow: 0px 5px 80px 10px rgba(0, 0, 0, 0.40);
+  box-shadow: 0px 5px 80px 10px rgba(0, 0, 0, 0.40);
 }
 
 #default-carousel {
@@ -283,7 +283,7 @@
   transition: 0.3s ease-in-out;
 }
 
-.perle{
+.perle {
   height: 10px;
   width: 10px;
   background-color: #a9c5bb6c;
@@ -292,11 +292,11 @@
   transition: 0.3s ease-in-out;
 }
 
-.perleActive{
+.perleActive {
   width: 30px !important;
   background-color: var(--vert);
 }
 
-.perleActive.perleActiveB{
+.perleActive.perleActiveB {
   background-color: var(--vert-clair);
 }
