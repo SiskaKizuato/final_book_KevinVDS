@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MdOutlinePhoneInTalk } from 'react-icons/md';
 import { BsSearch } from 'react-icons/bs';
 import { GrClose } from 'react-icons/gr';
@@ -7,19 +7,17 @@ import { BsFillSunFill } from "react-icons/bs";
 import { BsMoon } from "react-icons/bs";
 import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
+import { setSearchVal } from '@/features/searchSlice/searchSlice';
 
-export default function Navbar2({toggleMode}) {
+export default function Navbar({ darkMode, toggleMode }) {
 
-    const dispatch=useDispatch();
-    const darkMode=useSelector((state)=>state.darkMode.value)
- 
+    const searchVal=useSelector((state)=> state.searchVal.value)
+    const dispatch=useDispatch()
     const [sidebarVisible, setSidebarVisible] = useState(false);
 
     function toggleSidebar() {
         setSidebarVisible(!sidebarVisible);
     }
-
-
     const [stickyNav, setStickyNav] = useState(false);
 
     const stickOnScroll = () => {
@@ -32,8 +30,15 @@ export default function Navbar2({toggleMode}) {
     const [searchVisible, setSearchVisible] = useState(false);
 
 
+    useEffect(() => {
+        window.addEventListener('scroll', stickOnScroll);
+        return () => {
+            window.removeEventListener('scroll', stickOnScroll);
+        };
+    }, []);
+
     return (
-        <div className={`containerNav ${darkMode ? 'containerNavB' : ''} ${stickyNav ? "fixed" : ""}`}>
+        <div className={`containerNav ${darkMode ? 'containerNav2B' : ''} ${stickyNav ? "fixed" : ""}`}>
             <div className='navLeftContainer'>
                 <div className='burgerContainer flex items-center' onClick={toggleSidebar}>
                     <div className='burger flex flex-col justify-center'>
@@ -44,14 +49,6 @@ export default function Navbar2({toggleMode}) {
                 </div>
                 <div className='flex items-center'>
                     <Link href={"/"} className={`philo titreSiteNav ${darkMode ? 'titreSiteNavB' : ''}`}>BOOKSHELF.</Link>
-                </div>
-            </div>
-            <div className={`navMidContainer ${searchVisible ? 'hidden' : ''}`}>
-                <div className='paddSearch'>
-                    <div className={`containerSearchBar ${darkMode ? 'containerSearchBarB' : ''}`}>
-                        <div className='containerSearch'><BsSearch className={`btnSearchNav ${darkMode ? 'btnSearchNavB' : ''}`} /></div>
-                        <input type="search" className={`searchInput focus:ring-0 ${darkMode ? 'searchInputB' : ''}`} placeholder='Search your book here' />
-                    </div>
                 </div>
             </div>
             <div className='navRightContainer'>
@@ -99,9 +96,9 @@ export default function Navbar2({toggleMode}) {
                     <Link href={"/allBooks"} onClick={() => setSearchVisible(!searchVisible)} className={`pop catSideBar ${darkMode ? 'catSideBarB' : ''}`}>
                         <p>All Books</p>
                     </Link>
-                    <div className={`pop catSideBar ${darkMode ? 'catSideBarB' : ''}`}>
+                    <Link href={"/sign"} className={`pop catSideBar ${darkMode ? 'catSideBarB' : ''}`}>
                         <p>Sign In/Sign Up</p>
-                    </div>
+                    </Link>
                 </div>
             </div>
             <div onClick={toggleSidebar} className={`bgSideBar ${sidebarVisible ? '' : 'hidden'}`}></div>

@@ -54,6 +54,7 @@ export default function ContainerAllBooks() {
         setSelectedAuteur(auteur);
         setIsOpen(!isOpen)
     }
+
     const [isOpen, setIsOpen] = useState(false);
 
     function toggleMenuAuteurs() {
@@ -100,29 +101,52 @@ export default function ContainerAllBooks() {
         setShowMenu(false);
     };
 
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000);
+    }, [])
+
+    if (loading) {
+        return (
+            <div className='containerLoader'>
+                <div class="loader">
+                    <div class="loader-square"></div>
+                    <div class="loader-square"></div>
+                    <div class="loader-square"></div>
+                    <div class="loader-square"></div>
+                    <div class="loader-square"></div>
+                    <div class="loader-square"></div>
+                    <div class="loader-square"></div>
+                </div>
+            </div>
+        )
+    }
+
     return (
-        <div className={`containerAllBooks bgBf ${darkMode ? 'bgBn' : ''}`}>
+        <div className={`containerAllBooks bgBf ${darkMode ? 'bgBn' : ''} ${isOpen ? 'mHeight' : ''}`}>
             <div className='cadreAllBooks'>
                 <div className='containerCategory'>
                     <div className='searchCategory focus:ring-0'>
-                        <input value={searchVal} onChange={(e) => { dispatch(setSearchVal(e.target.value)) }} type="search" className='focus:ring-0 inputSearchCat pop' placeholder='Search' />
+                        <input value={searchVal} onChange={(e) => { dispatch(setSearchVal(e.target.value)) }} type="search" className={`focus:ring-0 inputSearchCat pop ${darkMode ? 'inputSearchCatB' : ''}`} placeholder='Search' />
                     </div>
-                    <p className='philo titreCat'>Category</p>
+                    <p className={`philo titreCat ${darkMode ? 'colorBf' : ''}`}>Category</p>
                     {genresList.map((category) => (
-                        <p key={category} className={`pop categories ${selectedCategory === category ? 'selected' : ''}`}
+                        <p key={category} className={`pop categories ${selectedCategory === category ? 'selected' : ''} ${darkMode ? 'categoriesB' : ''}`}
                             onClick={() => handleCategoryClick(category)}>{category}</p>
                     ))}
-                    <p className='philo titreCat'>Author</p>
-                    <div className='authorList'>
+                    <p className={`philo titreCat ${darkMode ? 'colorBf' : ''}`}>Author</p>
+                    <div className={`authorList ${darkMode ? 'authorListB' : ''}`}>
                         <div className='selectionAuteur' onClick={toggleMenuAuteurs}>
                             <div className='h-[100%] flex items-center'><p className='pop'>{selectedAuteur}</p></div>
                             <div className='h-[100%] flex items-center'><MdOutlineKeyboardArrowDown /></div>
                         </div>
-                        <div className={`containerListeAuteursA ${isOpen ? '' : 'hidden'}`}>
+                        <div className={`containerListeAuteursA ${isOpen ? '' : 'hidden'} ${darkMode ? 'bgV' : ''}`}>
                             {isOpen && (
                                 <ul className='containerListeAuteursB'>
                                     {auteurs.map((auteur) => (
-                                        <li key={auteur} className={`pop auteursSkin `} onClick={() => handleAuteurClick(auteur)}>{auteur}</li>
+                                        <li key={auteur} className={`pop auteursSkin ${darkMode ? 'colorBc' : ''}`} onClick={() => handleAuteurClick(auteur)}>{auteur}</li>
                                     ))}
                                 </ul>
                             )}
@@ -151,17 +175,17 @@ export default function ContainerAllBooks() {
                                 </div>
                             </div>
                         </div>
-                        <div className={`containerAvailable pop ${darkMode ? 'colorVc' : '' }`}>
+                        <div className={`containerAvailable pop ${darkMode ? 'colorVc' : ''}`}>
                             <p>Products Available</p>
                         </div>
                         <div className='containerFiltreMiseEnPage'>
 
                             <div className="dropdownMeP">
-                                <div className={`menuMeP ${darkMode ?  'bgV' : '' }`} onClick={handleMenuClick}>
+                                <div className={`menuMeP ${darkMode ? 'bgV' : ''}`} onClick={handleMenuClick}>
                                     <p className='pop'>{sortOrder}</p>
                                 </div>
                                 {showMenu && (
-                                    <div className={`dropdown-menuMeP ${darkMode ? 'bgVc' : '' }`}>
+                                    <div className={`dropdown-menuMeP ${darkMode ? 'bgVc' : ''}`}>
                                         <div className={`alphabetA pop alpHover ${darkMode ? 'colorBc' : ''}`} onClick={() => handleSortClick("(a-z)")}>
                                             <p>(a-z)</p>
                                         </div>
@@ -174,7 +198,7 @@ export default function ContainerAllBooks() {
 
                         </div>
                     </div>
-                    <div className='containerBooksByCat'>
+                    <div className={` ${changePageShape === 1 ? 'containerBooksByCat' : ''} ${changePageShape === 2 ? 'containerBooksByCat2' : ''}`}>
                         {books.filter(book => {
                             return searchVal === "" ? book :
                                 book.title.toLowerCase().includes(searchVal.toLowerCase())
@@ -182,7 +206,7 @@ export default function ContainerAllBooks() {
                                 book.authors.toLowerCase().includes(searchVal.toLowerCase())
                         }).map((item) => (<div key={item.id} className='filtrerDiv'>
                             {item.genres.includes(selectedCategory) && (
-                                <div className={`cards ${darkMode ? 'cardsB' : ''}`} key={item.id}>
+                                <div className={`${changePageShape === 1 ? 'cards' : ''} ${changePageShape === 2 ? 'cardsHorizontale' : ''} ${darkMode ? 'cardsB' : ''}`} key={item.id}>
                                     <div className='containerWidgetCards'>
                                         <div className='btnDynamique text-[19px] pr-[1px] widgetPanier'>
                                             <AiOutlineShoppingCart />
@@ -191,18 +215,18 @@ export default function ContainerAllBooks() {
                                             <AiOutlineFullscreen />
                                         </div>
                                     </div>
-                                    <div className='containerCadreImgCards'>
+                                    <div className={`${changePageShape === 1 ? 'containerCadreImgCards' : ''} ${changePageShape === 2 ? 'containerCadreImgCards2' : ''}`}>
                                         <div className='bgDual'>
                                             <div className='beige'></div>
                                             <div className='gris'></div>
                                         </div>
-                                        <div className='cadreImgCards' style={{ backgroundImage: `url(${item.image_url})` }}>
+                                        <div className={` ${changePageShape === 1 ? 'cadreImgCards' : ''} ${changePageShape === 2 ? 'cadreImgCardsHorizontal' : ''}`} style={{ backgroundImage: `url(${item.image_url})` }}>
                                         </div>
                                         <div className='ombreLivre'></div>
                                     </div>
-                                    <div className='containerInfoBooksA'>
-                                        <div className={`containerInfoBooks ${darkMode ? 'containerInfoBooksB' : ''}`}>
-                                            <div className='containertitreLivre'>
+                                    <div className={` ${changePageShape === 1 ? 'containerInfoBooksA' : ''} ${changePageShape === 2 ? 'containerInfoBooksAHorizontal' : ''} ${darkMode ? 'containerInfoBooksAB' : ''}`}>
+                                        <div className={` ${changePageShape === 1 ? 'containerInfoBooks' : ''} ${changePageShape === 2 ? 'containerInfoBooksHorizontal' : ''} ${darkMode ? 'containerInfoBooksB' : ''}`}>
+                                            <div className={` ${changePageShape === 1 ? 'containertitreLivre' : ''} ${changePageShape === 2 ? 'containertitreLivreHorizontal' : ''}`}>
                                                 <p className={`philo titreLivre ${darkMode ? 'titreLivreB' : ''}`} key={item.id}>{item.title}</p>
                                             </div>
                                             <div className='containerAuteurLivre'>
@@ -214,7 +238,7 @@ export default function ContainerAllBooks() {
                                             <div className='containerAuteurLivre'>
                                                 <p className={`pop prixLivre auteurLivre ${darkMode ? 'vc' : ''}`} key={item.id}>price: <span className={`spanAuteur pop ${darkMode ? 'bc' : ''}`}>${item.Price}</span></p>
                                             </div>
-                                            <div className={`containeraBtnAdd ${darkMode ? 'containeraBtnAddB' : ''}`}>
+                                            <div className={` ${changePageShape === 1 ? 'containeraBtnAdd' : ''} ${changePageShape === 2 ? 'containeraBtnAddHorizontal' : ''} ${darkMode ? 'containeraBtnAddB' : ''}`}>
                                                 <div onClick={(e) => { e.preventDefault(); setTotal(item.Price); handleDisableAdd() }} className={`btnAdd ${darkMode ? 'btnAddB' : ''} ${disableAdd === 0 ? '' : 'hidden'}`}>
                                                     <div className='containerNTM'>
                                                         <AiOutlineShoppingCart className='logoPanierBtnAdd' />

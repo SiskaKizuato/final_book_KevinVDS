@@ -9,8 +9,8 @@ import Popular from '@/components/Popular/Popular'
 import Navbar from '@/components/Navbar/Navbar'
 import Carousel from '@/components/Carousel/Carousel'
 import Test from '@/components/Test/Test'
-import { useDispatch, useSelector } from 'react-redux'
 import { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { switchDarkMode } from '@/features/darkMode/darkModeSlice'
 import { useRouter } from 'next/router'
 
@@ -22,10 +22,6 @@ export default function Home() {
 
   function toggleMode() {
     dispatch(switchDarkMode())
-  }
-
-  const handleCardClick = () => {
-    Router.push(`/Popular/${PopularId}`)
   }
 
   return (

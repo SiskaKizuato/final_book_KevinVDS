@@ -104,9 +104,9 @@ export default function Navbar({ darkMode, toggleMode }) {
                     <Link href={"/allBooks"} onClick={() => setSearchVisible(!searchVisible)} className={`pop catSideBar ${darkMode ? 'catSideBarB' : ''}`}>
                         <p>All Books</p>
                     </Link>
-                    <div className={`pop catSideBar ${darkMode ? 'catSideBarB' : ''}`}>
+                    <Link href={"/sign"} className={`pop catSideBar ${darkMode ? 'catSideBarB' : ''}`}>
                         <p>Sign In/Sign Up</p>
-                    </div>
+                    </Link>
                 </div>
             </div>
             <div onClick={toggleSidebar} className={`bgSideBar ${sidebarVisible ? '' : 'hidden'}`}></div>

@@ -1,0 +1,61 @@
+.containerSign{
+    height: fit-content;
+    width: 100%;
+    background-color: var(--blanc-casse);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px;
+}
+
+.containerSign.bgN{
+    background-color: #253946;
+    box-shadow: inset 0px 5px 25px -5px rgba(0, 0, 0, 0.75);
+}
+
+.containerChoice{
+    height: 100px;
+    width: 260px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.containerBtnCommuSign{
+    height: 55px !important;
+    width: 120px !important;
+    border-radius: 5px;
+    background-color: var(--vert) !important;
+    position: relative !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center !important;
+    overflow: hidden !important;
+    border: 1px solid var(--vert);
+}
+
+.changementFondBtnCommuSign{
+    position: absolute;
+    background-color: var(--noir);
+    width: 400px;
+    height: 400px;
+    display: block;
+    transform: rotate(50deg);
+    left: -350px;
+    top: -5px;
+    transition: 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.containerBtnCommuSign:hover .changementFondBtnCommuSign{
+    transform: rotate(85deg);
+    left: -250px;
+    top: -5px;
+}
+
+.subsSign{
+    color: var(--blanc-froid);
+    position: absolute;
+    z-index: 2;
+}

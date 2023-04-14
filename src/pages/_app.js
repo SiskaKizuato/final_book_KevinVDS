@@ -9,6 +9,7 @@ import '../styles/popular.css';
 import '../styles/test.css';
 import '../styles/allBooks.css';
 import '../styles/carousel.css';
+import '../styles/sign.css';
 import { Provider } from 'react-redux';
 import store from '../App/store';
 

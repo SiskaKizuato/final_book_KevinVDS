@@ -4,8 +4,16 @@
     height: fit-content;
     display: flex;
     justify-content: center;
-    align-items: center;
     padding: 6% 4% 6% 6%;
+    transition: 0.3s;
+}
+
+.containerAllBooks.bgBn {
+    box-shadow: inset 0px 5px 25px -5px rgba(0, 0, 0, 0.75);
+}
+
+.containerAllBooks.mHeight {
+    min-height: 4000px;
 }
 
 /* XXXXXXXXXXXXXXXXXXXX */
@@ -42,6 +50,23 @@
     font-size: 18px;
 }
 
+.inputSearchCat.inputSearchCatB {
+    background-color: var(--vert);
+    color: var(--blanc-casse);
+}
+
+.inputSearchCatB::placeholder {
+    color: var(--blanc-casse) !important;
+}
+
+.inputSearchCatB:focus-within {
+    border: 2px solid var(--vert-clair) !important;
+}
+
+.inputSearchCatB:not(:focus-within):hover {
+    border: 2px solid var(--gris-clair) !important;
+}
+
 .inputSearchCat:not(:focus-within):hover {
     border: 2px solid #5960662d;
     padding: 0px 8px;
@@ -60,6 +85,7 @@ input::selection {
 .titreCat {
     font-size: 20px;
     font-weight: bold;
+    transition: 0.3s ease-in-out;
 }
 
 .categories {
@@ -79,7 +105,19 @@ input::selection {
     color: var(--vert);
     border-top: 1px solid var(--blanc-froid);
     border-bottom: 1px dotted rgba(0, 0, 0, 0.212);
-    /* border-bottom: 0.7px solid rgba(0, 0, 0, 0.15); */
+}
+
+.categoriesB {
+    color: var(--vert-clair);
+    border-top: 1px solid #304b5a;
+    border-bottom: 1px solid #304b5a;
+}
+
+.categoriesB:hover,
+.categoriesB.selected {
+    color: var(--blanc-casse);
+    border-top: 1px solid #304b5a;
+    border-bottom: 1px dotted var(--vert-commu);
 }
 
 .authorList {
@@ -106,10 +144,14 @@ input::selection {
     padding: 0px 5px 0px 15px;
     left: 0;
     cursor: pointer;
-    border: 1px solid blue;
     transition: 0.3s ease-out;
     border: 2px solid transparent;
     box-sizing: border-box;
+}
+
+.authorList.authorListB {
+    background-color: var(--vert-fonce);
+    color: var(--blanc-casse);
 }
 
 .selectionAuteur:not(:focus-within):hover {
@@ -356,6 +398,14 @@ input::selection {
     height: fit-content;
     flex-wrap: wrap;
     display: flex;
+    flex-direction: row;
+}
+
+.containerBooksByCat2 {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
 }
 
 .cards {
@@ -372,10 +422,35 @@ input::selection {
     overflow: hidden;
 }
 
+.cardsHorizontale {
+    width: 100%;
+    height: 225px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px 4px rgba(0, 0, 0, 0.14);
+    -webkit-box-shadow: 0px 0px 25px 4px rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: 0px 0px 25px 4px rgba(0, 0, 0, 0.14);
+    position: relative;
+    margin-right: 26px;
+    margin-bottom: 23px;
+    transition: 0.3s ease-out;
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+}
+
 .cards.cardsB {
     -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.30);
     -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.30);
     box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.30);
+}
+
+.cardsHorizontale.cardsB {
+    background-color: #253946;
+    border: 1px solid transparent;
+    border: 2px solid var(--vert);
+    box-shadow: 0px 0px 19px 3px rgba(0, 0, 0, 0.34);
+    -webkit-box-shadow: 0px 0px 19px 3px rgba(0, 0, 0, 0.34);
+    -moz-box-shadow: 0px 0px 19px 3px rgba(0, 0, 0, 0.34);
 }
 
 .containerCadreImgCards {
@@ -387,6 +462,19 @@ input::selection {
     overflow: hidden;
     z-index: 0;
 }
+
+.containerCadreImgCards2 {
+    width: 38%;
+    height: 100%;
+    border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    border-radius: inherit;
+    border: 1px solid varI(--noir);
+}
+
 
 .bgDual {
     position: absolute;
@@ -424,6 +512,20 @@ input::selection {
     filter: saturate(110%) contrast(120%);
 }
 
+.cadreImgCardsHorizontal {
+    position: absolute;
+    z-index: 2;
+    width: 50%;
+    height: 150%;
+    background-position: center;
+    background-size: 100%;
+    left: 80px;
+    background-repeat: no-repeat;
+    border-radius: inherit;
+    rotate: -25deg;
+    filter: saturate(110%) contrast(120%);
+}
+
 .ombreLivre {
     position: absolute;
     width: 160px;
@@ -448,8 +550,27 @@ input::selection {
     border-bottom-right-radius: 10px;
 }
 
+.containerInfoBooksAHorizontal {
+    position: relative;
+    width: 62%;
+    padding-left: 15px;
+    height: 160px;
+    background-color: var(--blanc-froid);
+    z-index: 1;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+    transition: 0.3s;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
 .containerInfoBooksA.containerInfoBooksAB {
     background-color: var(--vert-fonce);
+}
+
+.containerInfoBooksAHorizontal.containerInfoBooksAB {
+    background-color: #253946;
 }
 
 .cards:hover .containerInfoBooksA,
@@ -476,6 +597,13 @@ input::selection {
     height: 60px;
     line-height: 23px;
     padding: 10px 15px 0px 15px;
+}
+
+.containertitreLivreHorizontal {
+    width: 100%;
+    height: fit-content;
+    padding: 0px 15px 0px 15px;
+    margin-bottom: 2px;
 }
 
 .titreLivre {
@@ -533,8 +661,27 @@ input::selection {
     align-items: bottom;
 }
 
+.containeraBtnAddHorizontal {
+    width: 205px;
+    height: 80px;
+    background-color: var(--blanc-froid);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding: 10px 0px 16px 15px;
+    opacity: 100;
+    transition: 0.1s;
+    display: flex;
+    align-items: bottom;
+}
+
 .containeraBtnAdd.containeraBtnAddB {
     background-color: var(--vert-fonce);
+}
+
+.containeraBtnAddHorizontal.containeraBtnAddB {
+    background-color: #253946;
+    border: 1px solid transparent;
+    padding: 7px 0px 19px 15px;
 }
 
 .btnAdd {
@@ -718,7 +865,8 @@ input::selection {
     transition: 0.3s;
 }
 
-.menuMeP.bgV{
+.menuMeP.bgV,
+.containerListeAuteursA.bgV {
     background-color: var(--vert);
     color: var(--blanc-casse);
 }
@@ -729,13 +877,14 @@ input::selection {
     left: 0;
     background-color: var(--blanc-casse);
     border: 1px solid #ccc;
-    z-index: 1;
+    z-index: 2;
     width: 145px;
     border-radius: 2px;
     border: 1px solid rgba(0, 0, 0, 0.242);
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.30);
     -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.30);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.30);
+    transition: 0.3s ease-out;
 }
 
 .dropdown-menuMeP.bgVc {
@@ -748,6 +897,7 @@ input::selection {
     height: 30px;
     display: flex;
     align-items: center;
+    transition: 0.3s ease-out;
 }
 
 .alpHover:hover {
@@ -774,36 +924,191 @@ input::selection {
 }
 
 .bgBf.bgBn {
-    background-color: var(--footer);
+    background-color: #304b5a;
 }
 
 .containerInfoBooks.containerInfoBooksB {
     background-color: var(--vert-fonce);
 }
 
+.containerInfoBooksHorizontal.containerInfoBooksB {
+    background-color: #253946;
+}
+
 .totalLivre.vertCommu {
     color: var(--vert-commu);
 }
 
-
-.containerAvailable.colorVc{
+.containerAvailable.colorVc {
     color: var(--vert-clair);
 }
 
-.colorBf{
+.titreCat.colorBf {
     color: var(--blanc-froid);
 }
 
 .logoMEP.colorBc,
-.alpHover.colorBc{
+.alpHover.colorBc {
     color: var(--blanc-casse);
 }
 
-.borderBc{
-    border: 1px solid var(--blanc-casse);    
+.borderBc {
+    border: 1px solid var(--blanc-casse);
 }
 
 
-.alpHover:hover.colorBc{
+.alpHover:hover.colorBc,
+.auteursSkin:hover.colorBc {
     background-color: var(--noir);
+}
+
+
+
+@keyframes square-animation {
+    0% {
+        left: 0;
+        top: 0;
+    }
+
+    10.5% {
+        left: 0;
+        top: 0;
+    }
+
+    12.5% {
+        left: 32px;
+        top: 0;
+    }
+
+    23% {
+        left: 32px;
+        top: 0;
+    }
+
+    25% {
+        left: 64px;
+        top: 0;
+    }
+
+    35.5% {
+        left: 64px;
+        top: 0;
+    }
+
+    37.5% {
+        left: 64px;
+        top: 32px;
+    }
+
+    48% {
+        left: 64px;
+        top: 32px;
+    }
+
+    50% {
+        left: 32px;
+        top: 32px;
+    }
+
+    60.5% {
+        left: 32px;
+        top: 32px;
+    }
+
+    62.5% {
+        left: 32px;
+        top: 64px;
+    }
+
+    73% {
+        left: 32px;
+        top: 64px;
+    }
+
+    75% {
+        left: 0;
+        top: 64px;
+    }
+
+    85.5% {
+        left: 0;
+        top: 64px;
+    }
+
+    87.5% {
+        left: 0;
+        top: 32px;
+    }
+
+    98% {
+        left: 0;
+        top: 32px;
+    }
+
+    100% {
+        left: 0;
+        top: 0;
+    }
+}
+
+.containerLoader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}
+
+.loader {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    transform: rotate(45deg);
+}
+
+.loader-square {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 28px;
+    height: 28px;
+    margin: 2px;
+    border-radius: 0px;
+    background: var(--vert);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    animation: square-animation 10s ease-in-out infinite both;
+}
+
+.loader-square:nth-of-type(0) {
+    animation-delay: 0s;
+}
+
+.loader-square:nth-of-type(1) {
+    animation-delay: -1.4285714286s;
+}
+
+.loader-square:nth-of-type(2) {
+    animation-delay: -2.8571428571s;
+}
+
+.loader-square:nth-of-type(3) {
+    animation-delay: -4.2857142857s;
+}
+
+.loader-square:nth-of-type(4) {
+    animation-delay: -5.7142857143s;
+}
+
+.loader-square:nth-of-type(5) {
+    animation-delay: -7.1428571429s;
+}
+
+.loader-square:nth-of-type(6) {
+    animation-delay: -8.5714285714s;
+}
+
+.loader-square:nth-of-type(7) {
+    animation-delay: -10s;
 }
