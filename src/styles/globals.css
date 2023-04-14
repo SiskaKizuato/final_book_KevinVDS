@@ -150,7 +150,7 @@ a::selection {
     height: 650px !important;
     flex-direction: column;
     gap: 20px !important;
-
+    border: 1px solid red;
   }
   .partLeftJoin{
     height: 260px !important;
@@ -207,5 +207,17 @@ a::selection {
   }
   .copyrightF{
     flex-direction: column;
+  }
+  .containerBooksByCatPopular{
+    justify-content: center !important;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1025px) {
+  .carouselPartL1{
+    padding-left: 20px !important;
+  }
+  .containerSaleUp{
+    gap: 20px !important;
   }
 }
