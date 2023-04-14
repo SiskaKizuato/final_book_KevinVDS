@@ -125,15 +125,18 @@ export default function Popular({ darkMode }) {
                                         <AiOutlineFullscreen />
                                     </div>
                                 </div>
-                                <div className='containerCadreImgCards'>
-                                    <div className='bgDual'>
-                                        <div className='beige'></div>
-                                        <div className='gris'></div>
+
+                                <Link href={`/${item.title}`}>
+                                    <div className='containerCadreImgCards'>
+                                        <div className='bgDual'>
+                                            <div className='beige'></div>
+                                            <div className='gris'></div>
+                                        </div>
+                                        <div className='cadreImgCards' style={{ backgroundImage: `url(${item.image_url})` }}>
+                                        </div>
+                                        <div className='ombreLivre'></div>
                                     </div>
-                                    <div className='cadreImgCards' style={{ backgroundImage: `url(${item.image_url})` }}>
-                                    </div>
-                                    <div className='ombreLivre'></div>
-                                </div>
+                                </Link>
                                 <div className={`containerInfoBooksA ${darkMode ? 'containerInfoBooksAB' : ''}`}>
                                     <div className='containerInfoBooks'>
                                         <div className='containertitreLivre'>

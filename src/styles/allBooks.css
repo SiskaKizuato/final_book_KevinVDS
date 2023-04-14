@@ -463,7 +463,7 @@ input::selection {
     z-index: 0;
 }
 
-.containerCadreImgCards2 {
+.containerCadreImgCards2Cont{
     width: 38%;
     height: 100%;
     border-top-left-radius: 5px;
@@ -473,6 +473,13 @@ input::selection {
     z-index: 0;
     border-radius: inherit;
     border: 1px solid varI(--noir);
+}
+
+.containerCadreImgCards2 {
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+
 }
 
 

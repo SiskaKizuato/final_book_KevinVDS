@@ -9,6 +9,7 @@ import { decrement, increment, incrementByAmount, decrementByAmount, reset } fro
 import { BsFillGridFill } from "react-icons/bs"
 import { HiOutlineBars4 } from "react-icons/hi2";
 import { setSearchVal } from '@/features/searchSlice/searchSlice';
+import Link from 'next/link';
 
 export default function ContainerAllBooks() {
 
@@ -215,15 +216,17 @@ export default function ContainerAllBooks() {
                                             <AiOutlineFullscreen />
                                         </div>
                                     </div>
-                                    <div className={`${changePageShape === 1 ? 'containerCadreImgCards' : ''} ${changePageShape === 2 ? 'containerCadreImgCards2' : ''}`}>
-                                        <div className='bgDual'>
-                                            <div className='beige'></div>
-                                            <div className='gris'></div>
+                                    <Link href={`/${item.title}`} className={`${changePageShape === 2 ? 'containerCadreImgCards2Cont' : ''}`}>
+                                        <div className={`${changePageShape === 1 ? 'containerCadreImgCards' : ''} ${changePageShape === 2 ? 'containerCadreImgCards2' : ''}`}>
+                                            <div className='bgDual'>
+                                                <div className='beige'></div>
+                                                <div className='gris'></div>
+                                            </div>
+                                            <div className={` ${changePageShape === 1 ? 'cadreImgCards' : ''} ${changePageShape === 2 ? 'cadreImgCardsHorizontal' : ''}`} style={{ backgroundImage: `url(${item.image_url})` }}>
+                                            </div>
+                                            <div className='ombreLivre'></div>
                                         </div>
-                                        <div className={` ${changePageShape === 1 ? 'cadreImgCards' : ''} ${changePageShape === 2 ? 'cadreImgCardsHorizontal' : ''}`} style={{ backgroundImage: `url(${item.image_url})` }}>
-                                        </div>
-                                        <div className='ombreLivre'></div>
-                                    </div>
+                                    </Link>
                                     <div className={` ${changePageShape === 1 ? 'containerInfoBooksA' : ''} ${changePageShape === 2 ? 'containerInfoBooksAHorizontal' : ''} ${darkMode ? 'containerInfoBooksAB' : ''}`}>
                                         <div className={` ${changePageShape === 1 ? 'containerInfoBooks' : ''} ${changePageShape === 2 ? 'containerInfoBooksHorizontal' : ''} ${darkMode ? 'containerInfoBooksB' : ''}`}>
                                             <div className={` ${changePageShape === 1 ? 'containertitreLivre' : ''} ${changePageShape === 2 ? 'containertitreLivreHorizontal' : ''}`}>

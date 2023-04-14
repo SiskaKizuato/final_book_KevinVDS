@@ -43,7 +43,7 @@
 
 .popuplarBooksTypo{
     color: var(--noir);
-    transition: 0.3s;
+    transition: 1s  ease-out;
 }
 
 .popuplarBooksTypo.popuplarBooksTypoB{
@@ -61,12 +61,14 @@
     align-items: center;
     position: relative;
     transition: 1s ease-in-out;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-.containerPopular:hover .ligneBizarre {
+/* .containerPopular:hover .ligneBizarre {
     margin-top: 5px;
     margin-bottom: 10px;
-}
+} */
 
 .carreA {
     height: 18px;
